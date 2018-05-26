@@ -79,6 +79,41 @@ for($day = 1; $day <= $day_count; $day++, $str++){
     </style>
   </head>
   <body>
+    <!--상단 헤더-->
+    <div id="logo"><a href="index.php"><img src="" border="0">로고</a></div>
+    <div id="moto"><img src="">부수적 로고</div>
+    <div id="top_login">
+      <?
+        if(!$userid) {
+      ?>
+      <a href="./login/login_form.php">로그인</a>
+      <a href="./member/member_form.php">회원가입</a>
+      <?
+        }
+        else {
+      ?>
+      <?=$usernick?> (level:<?=$userlevel?>) |
+      <a href="./login/logout.php">로그아웃</a> |
+      <a href="./login/member_form_modify.php">정보수정</a>
+      <?
+        }
+      ?>
+    </div>
+    <!--네비게이션 바-->
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" href="./menu/schedule.php">상세일정</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./menu/notice.php">공지사항</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./menu/board.php">자유게시판</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./menu/anonym_board.php">익명게시판</a>
+      </li>
+    </ul>
     <div class="container">
       <h3><a href='?ym=<?php echo $prev; ?>'> &lt; </a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>"> &gt; </a></h3>
       <br>
@@ -104,7 +139,7 @@ for($day = 1; $day <= $day_count; $day++, $str++){
 
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   </body>
 </html>
