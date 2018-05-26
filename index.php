@@ -114,6 +114,7 @@ for($day = 1; $day <= $day_count; $day++, $str++){
         <a class="nav-link" href="./menu/anonym_board.php">익명게시판</a>
       </li>
     </ul>
+    <!--달력 일정-->
     <div class="container">
       <h3><a href='?ym=<?php echo $prev; ?>'> &lt; </a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>"> &gt; </a></h3>
       <br>
