@@ -52,11 +52,11 @@
    <body>
      <div id="wrap">
        <div id="header">
-         <? include "../lib/top_header.php";?>
+         <? include "../top_header.php";?>
        </div>
 
        <div id="menu">
-         <? include "../lib/main_menu.php";?>
+         <? include "../main_menu.php";?>
        </div>
 
        <div id="content">
