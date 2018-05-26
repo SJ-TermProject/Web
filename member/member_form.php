@@ -82,7 +82,7 @@
 <body>
 	<div id="header">
   	<? include "../top_header.php"; ?>
-	</div>  <!--end of header-->
+	</div>
 	<div id="menu">
   	<? include "main_menu.php"; ?>
 	</div>
