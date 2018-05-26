@@ -1,5 +1,5 @@
 <div id="header">
-  <? include "top_header.php"; ?>
+  <? include "../top_header.php"; ?>
 </div>  <!--end of header-->
 <div id="menu">
   <? include "main_menu.php"; ?>
