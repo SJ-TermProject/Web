@@ -1,4 +1,4 @@
-<div id="logo"><a href="index.php"><img src="" border="0">로고</a></div>
+<div id="logo"><a href="../index.php"><img src="" border="0">로고</a></div>
 <div id="moto"><img src="">부수적 로고</div>
 <div id="top_login">
   <?
