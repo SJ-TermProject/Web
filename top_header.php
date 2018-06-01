@@ -2,6 +2,13 @@
 <div id="moto"><img src="">부수적 로고</div>
 <div id="top_login">
   <?
+    session_start();
+//  error_reporting(E_ALL & ~E_NOTICE );
+
+    $userid = $_SESSION['userid'];
+    $username = $_SESSION['username'];
+    $userlevel = $_SESSION['userlevel'];
+
     if(!$userid) {
   ?>
   <a href="../login/login_form.php">로그인</a>

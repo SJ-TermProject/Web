@@ -1,6 +1,11 @@
 <meta charset="utf-8">
 <?
-   if($id != NULL) {
+  $id = $_GET['id'];
+
+   if(!$id) {
+     echo("아이디(학번)를 입력하세요.");
+   }
+   else {
      include "../lib/dbconn.php";
 
      $sql = "select * from member where id='$id'";
@@ -18,8 +23,5 @@
 
      mysql_close();
 
-   }
-   else {
-      echo("아이디(학번)를 입력하세요.");
    }
 ?>

@@ -1,56 +1,64 @@
 <?
   session_start();
- date_default_timezone_set('Asia/Tokyo');
+//  error_reporting(E_ALL & ~E_NOTICE );
+
+    $userid = $_SESSION['userid'];
+    $username = $_SESSION['username'];
+    $userlevel = $_SESSION['userlevel'];
+
+  date_default_timezone_set('Asia/Tokyo');
 
   if(isset($_GET['ym'])) {
   $ym = $_GET['ym'];
-}else{
-  $ym = date('Y-m');
-}
-
-$timestamp = strtotime($ym,"-01");
-if($timestamp === false) {
-  $timestamp = time();
-}
-
-$today = date('Y-m-d',time());
-
-$html_title = date('Y/m',$timestamp);
-
-$prev = date('Y-m',mktime(0,0,0,date('m',$timestamp)-1,1,date('Y',$timestamp)));
-$next = date('Y-m',mktime(0,0,0,date('m',$timestamp)+1,1,date('Y',$timestamp)));
-
-$day_count = date('t',$timestamp);
-
-$str = date('w',mktime(0,0,0,date('m',$timestamp),1,date('Y',$timestamp)));
-
-$weeks = array();
-$week = '';
-
-$week .= str_repeat('<td></td>',$str);
-
-for($day = 1; $day <= $day_count; $day++, $str++){
-  $date = $ym.'-'.$day;
-
-  if($today == $date){
-    $week .= '<td class="today">'.$day;
-  }else {
-    $week .= '<td>'.$day;
   }
-  $week .= '</td>';
+  else{
+    $ym = date('Y-m');
+  }
 
-  if($str % 7 == 6 || $day == $day_count) {
-    if($day == $day_count){
-      $week .= str_repeat('<td></td>', 6 - ($str % 7));
+  $timestamp = strtotime($ym,"-01");
+  if($timestamp === false) {
+    $timestamp = time();
+  }
+
+  $today = date('Y-m-d',time());
+
+  $html_title = date('Y/m',$timestamp);
+
+  $prev = date('Y-m',mktime(0,0,0,date('m',$timestamp)-1,1,date('Y',$timestamp)));
+  $next = date('Y-m',mktime(0,0,0,date('m',$timestamp)+1,1,date('Y',$timestamp)));
+
+  $day_count = date('t',$timestamp);
+
+  $str = date('w',mktime(0,0,0,date('m',$timestamp),1,date('Y',$timestamp)));
+
+  $weeks = array();
+  $week = '';
+
+  $week .= str_repeat('<td></td>',$str);
+
+  for($day = 1; $day <= $day_count; $day++, $str++){
+    $date = $ym.'-'.$day;
+
+    if($today == $date){
+      $week .= '<td class="today">'.$day;
     }
+    else {
+      $week .= '<td>'.$day;
+    }
+    $week .= '</td>';
 
-    $weeks[] = '<tr>'.$week.'</tr>';
+    if($str % 7 == 6 || $day == $day_count) {
+      if($day == $day_count){
+        $week .= str_repeat('<td></td>', 6 - ($str % 7));
+      }
 
-    $week = '';
+      $weeks[] = '<tr>'.$week.'</tr>';
+
+      $week = '';
+    }
   }
-}
+?>
 
- ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>

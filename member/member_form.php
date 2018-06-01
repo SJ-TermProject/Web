@@ -4,12 +4,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="euc-kr">
+<meta charset="utf-8">
 <script>
    function check_id() {
-     window.open("check_id.php?id=" + document.member_form.id.value,
-         "IDcheck",
-          "left=200,top=200,width=200,height=60,scrollbars=no,resizable=yes");
+     window.open("check_id.php?id=" + document.member_form.id.value, "IDcheck", "left=200,top=200,width=200,height=60,scrollbars=no,resizable=yes");
    }
 
    function check_input() {
@@ -39,14 +37,14 @@
 
       if (!document.member_form.hp2.value || !document.member_form.hp3.value ) {
           alert("휴대폰 번호를 입력하세요");
-          document.member_form.id.focus();
+          document.member_form.hp.focus();
           return;
       }
 
       if (document.member_form.pw.value != document.member_form.pw_confirm.value) {
           alert("비밀번호가 일치하지 않습니다.\n다시 입력해주세요.");
-          document.member_form.pass.focus();
-          document.member_form.pass.select();
+          document.member_form.pw.focus();
+          document.member_form.pw.select();
           return;
       }
 
@@ -81,7 +79,7 @@
 	</div>
 
 	<div id="col2">
-        <form  name="member_form" method="post" action="insert.php">
+    <form  name="member_form" method="post" action="insert.php">
 		<div id="title">
 			<h1>회원가입</h1>
 		</div>

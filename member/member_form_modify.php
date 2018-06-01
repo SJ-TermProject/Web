@@ -1,5 +1,7 @@
 <?
   session_start();
+
+  $userid = $_SESSION['userid'];
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,14 +33,14 @@
 
         if (!document.member_form.hp2.value || !document.member_form.hp3.value ) {
             alert("휴대폰 번호를 입력하세요");
-            document.member_form.id.focus();
+            document.member_form.hp.focus();
             return;
         }
 
         if (document.member_form.pw.value !=  document.member_form.pw_confirm.value) {
             alert("비밀번호가 일치하지 않습니다.\n다시 입력해주세요.");
-            document.member_form.pass.focus();
-            document.member_form.pass.select();
+            document.member_form.pw.focus();
+            document.member_form.pw.select();
             return;
         }
 
@@ -70,12 +72,12 @@
     $result = mysql_query($sql, $connect);
     $row = mysql_fetch_array($result);
 
-    $hp = explode("-", $row[hp]);
+    $hp = explode("-", $row['hp']);
     $hp1 = $hp[0];
     $hp2 = $hp[1];
     $hp3 = $hp[2];
 
-    $email = explode("@", $row[email]);
+    $email = explode("@", $row['email']);
     $email1 = $email[0];
     $email2 = $email[1];
 
@@ -93,10 +95,10 @@
       <div id="title"> <h1>회원정보수정</h1> </div>
       <div id="join1">
 			  <ul>
-			    <li>* 아이디(학번)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $row[id] ?></li>
-			    <li>* 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" name="pw" value="<?= $row[pw] ?>">&nbsp;</li>
-			    <li>* 비밀번호 확인&nbsp;&nbsp;&nbsp; <input type="password" name="pw_confirm" value="<?= $row[pw] ?>"></li>
-			    <li>* 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" value="<?= $row[name] ?>"></li>
+			    <li>* 아이디(학번)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?= $row['id'] ?></li>
+			    <li>* 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" name="pw" value="<?= $row['pw'] ?>">&nbsp;</li>
+			    <li>* 비밀번호 확인&nbsp;&nbsp;&nbsp; <input type="password" name="pw_confirm" value="<?= $row['pw'] ?>"></li>
+			    <li>* 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" value="<?= $row['name'] ?>"></li>
 			    <li>* 휴대폰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="text" class="hp" name="hp1" value="<?= $hp1 ?>"> - <input type="text" class="hp" name="hp2" value="<?= $hp2 ?>"> - <input type="text" class="hp" name="hp3" value="<?= $hp3 ?>">
           </li>
@@ -104,14 +106,14 @@
             <input type="text" id="email" name="email1" value="<?= $email1 ?>"> @ <input type="text" id="email" name="email2" value="<?= $email2 ?>">
           </li>
           <li>&nbsp;&nbsp;&nbsp;생일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="birth_day" name="day" value=" value="<?= $row[birth_day] ?>""></li>
+            <input type="text" id="birth_day" name="birth_day" value="<?= $row['birth_day'] ?>"></li>
 			  </ul>
 			</div>
 			<div class="clear"></div>
 			<div id="must"> * 는 필수 입력항목입니다.^^</div>
 
-      <a href="#" onclick="check_input()"> 저장 </a>
-      <a href="#" onclick="check_input()"> 취소 </a>
+      <a href="#" onclick="check_input()"> 저장하기 </a>&nbsp;&nbsp;
+      <a href="#" onclick="reset_form()"> 취소하기 </a>
 		  </form>
     </div>
   </body>

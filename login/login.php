@@ -1,5 +1,8 @@
 <?
   session_start();
+
+  $id = $_POST['id'];
+  $pw = $_POST['pw'];
 ?>
 <meta charset="utf-8">
 <?
@@ -27,7 +30,7 @@
 
   include "../lib/dbconn.php";
 
-  $sql = "select * from member where id=$'id'";
+  $sql = "select * from member where id='$id'";
   $result = mysql_query($sql, $connect);
   $num_match = mysql_num_rows($result);
 
