@@ -10,7 +10,7 @@
     }
     else {
   ?>
-  <?=$usernick?> (level:<?=$userlevel?>) |
+  <?=$userid?> (level:<?=$userlevel?>) |
   <a href="../login/logout.php">로그아웃</a> |
   <a href="../login/member_form_modify.php">정보수정</a>
   <?

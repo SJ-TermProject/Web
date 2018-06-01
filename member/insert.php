@@ -20,10 +20,10 @@
          exit;
    }
    else {  //레코드 삽입 명령을 $sqldp dlqfur
-	    $sql = "insert into member(id, pw, namek, hp, email, birth_day, level) ";
-		$sql .= "values('$id', '$pw', '$name', '$hp', '$email', '$birth_day', 2)";
+     $sql = "insert into member(id, pw, namek, hp, email, birth_day, level) ";
+     $sql .= "values('$id', '$pw', '$name', '$hp', '$email', '$birth_day', 2)";
 
-		mysql_query($sql, $connect);  // $sql에 저장된 명령 실행
+     mysql_query($sql, $connect);  // $sql에 저장된 명령 실행
    }
 
    mysql_close();                // DB 연결 종료

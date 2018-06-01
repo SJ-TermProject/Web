@@ -1,4 +1,5 @@
-<?php
+<?
+  session_start();
  date_default_timezone_set('Asia/Tokyo');
 
   if(isset($_GET['ym'])) {
@@ -50,7 +51,7 @@ for($day = 1; $day <= $day_count; $day++, $str++){
 }
 
  ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
     <meta charset="utf-8">
@@ -92,9 +93,9 @@ for($day = 1; $day <= $day_count; $day++, $str++){
         }
         else {
       ?>
-      <?=$usernick?> (level:<?=$userlevel?>) |
+      <?=$userid?> (level:<?=$userlevel?>) |
       <a href="./login/logout.php">로그아웃</a> |
-      <a href="./login/member_form_modify.php">정보수정</a>
+      <a href="./member/member_form_modify.php">정보수정</a>
       <?
         }
       ?>
