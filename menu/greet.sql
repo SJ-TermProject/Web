@@ -1,5 +1,5 @@
 create table greet (
-  num int not null auto_incremnet,
+  num int not null auto_increment,
   id char (15) not null,
   name char(10) not null,
   subject char(100) not null,
