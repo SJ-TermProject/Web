@@ -37,7 +37,7 @@ for($i=0;$i<3;$i++){
     $imageinfo=GetImageSize("./data/".$image_copied[$i]);
 
     $image_width[$i]=$imageinfo[0];
-    $image_weight[$i]=$imageinfo[1];
+    $image_height[$i]=$imageinfo[1];
     $image_type[$i]=$imageinfo[2];
 
     if($image_width[$i]>785)
@@ -51,7 +51,7 @@ for($i=0;$i<3;$i++){
 }
 
 $new_hit=$item_hit + 1;
-$sql="update greet set hit=$new_hit where num=$num";
+$sql="update $table set hit=$new_hit where num=$num";
 mysql_query($sql, $connect);
 
  ?>
@@ -97,34 +97,45 @@ mysql_query($sql, $connect);
 
              <div id="view_title">
                <div id="view_title1"><?=$item_subject ?></div>
-               <div id="view_titlw2"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
+               <div id="view_title2"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
                </div>
              </div>
 
              <div id="view_content">
-               <?=item_content ?>
+               <?
+               for($i=0;$i<3;$i++){
+                 if($image_copied[$i]){
+                   $img_name=$image_copied[$i];
+                   $img_name="./data/".$img_name;
+                   $img_width=$image_width[$i];
+
+                   echo "<img src='$img_name' width='$img_width'>"."<br><br>";
+                 }
+               }
+               ?>
+               <?=$item_content ?>
              </div>
 
              <div id="view_button">
-               <a href="list.php?page=<?=$page?>">
+               <a href="list.php?table=<?=$table?>&page=<?=$page?>">
                 <img src="../img/list.png"></a>&nbsp;
                 <?
-                if($usrid==$item_id or $userid=="admin"){
+                if($userid==$item_id || $userid=="admin" || $userlevel==1){
                   ?>
-                  <a href="modify_form.php?num=<?=$num?>&page=<?=$page?>">
-                  <img src="../img/modify.png"></a>&nbsp;
-                  <a href="javascript:del('delete.php?num=<?=$num?>')">
+                  <a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
+                  <a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')">
                   <img src="../img/delete.png"></a>&nbsp;
                   <?
                 }
-               ?>
-               <?
-               if($userid){
+                ?>
+                <?php
+                if($userid){
+                  ?>
+                  <a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
+                  <?
+                }
+
                  ?>
-                 <a href="write_form.php"><img src="../img/write.png"></a>
-                 <?
-               }
-               ?>
              </div>
              <div class="clear"></div>
            </div>
