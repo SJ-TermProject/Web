@@ -3,11 +3,12 @@ body {
 	padding:0;
 	background-image:url(../img/main_bg.gif);
 	background-repeat:repeat-x;
-	font-family:"µ¸¿ò";
+	/*font-family:"";*/
 	font-size:12px;
 	font-weight:normal;
 	color:#333333;
 }
+
 
 img {
 	border:0;
@@ -18,7 +19,7 @@ a {
 }
 
 a:hover, a:visited, a:link, a:active {
-	font-family:"µ¸¿ò";
+	/*font-family:"ï¿½ï¿½ï¿½ï¿½";*/
 	font-size:12px;
 	font-weight:normal;
 	color:#555555;
@@ -109,7 +110,7 @@ ul, li {
 }
 
 #left_menu #sub_title img{
-	padding-left:10px; 
+	padding-left:10px;
 /*	padding-top:20px;   */
 }
 
@@ -183,5 +184,3 @@ ul, li {
 #title_latest2 img {
 	padding-bottom:5px;
 }
-
-
