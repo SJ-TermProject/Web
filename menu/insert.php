@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+extract($_POST);
+extract($_GET);
+extract($_SESSION);
+?>
   <meta charset="utf-8">
   <?php
     if(!$userid){
@@ -22,10 +26,10 @@
     */
 
     //다중 파일 업로드
-    $files=$_FILES['upfile'];
+    $files=$_FILES["upfile"];
     $count=count($files["name"]);
 
-    $upload_dir="./data/";
+    $upload_dir='../data/';
 
     for($i=0;$i<$count;$i++){
       $upfile_name[$i]=$files["name"][$i];
@@ -48,13 +52,14 @@
         if($upfile_size[$i]>500000){
           echo("
           <script>
-          alert('업로드 팦일 크기가 지정된 용량(500KB)을 초과합니다!<br>
+          alert('업로드  파일 크기가 지정된 용량(500KB)을 초과합니다!<br>
             파일 크기를 확인해 주세요!');
             history.go(-1)
             </script>
           ");
           exit;
         }
+
         if(($upfile_type[$i]!='image/gif') && ($upfile_type[$i]!="image/jpeg") && ($upfile_type[$i]!="image/pjpeg"))
         {
           echo("
@@ -104,7 +109,7 @@
         if($del_ok[$i]=="y"){
           $delete_field="file_copied_".$i;
           $delete_name=$row[$delete_field];
-          $delete_path="./data/".$delete_name;
+          $delete_path="../data/".$delete_name;
 
           unlink($delete_path);
 
@@ -181,17 +186,18 @@
         $content=htmlspecialchars($content);
       }
 
-      $sql="insert into greet (id,name, subject, content, regist_day, hit, is_html)";
-      $sql="values('$userid','$username','$subject','$content','$regist_day',0,'$is_html')";
-
+      $sql="insert into $table (id, name, subject, content, regist_day, hit, is_html, ";
+      $sql.="file_name_0, file_name_1, file_name_2, file_copied_0, file_copied_1, file_copied_2) ";
+      $sql.="values('$userid','$username','$subject','$content','$regist_day', 0,'$is_html', ";
+      $sql.="'$upfile_name[0]', '$upfile_name[1]', '$upfile_name[2]', '$copied_file_name[0]', '$copied_file_name[1]','$copied_file_name[2]')";
+      mysql_query($sql, $connect);
     }
 
-    mysql_query($sql, $connect);
     mysql_close();
 
     echo("
     <script>
-    location.href='list.php?page=$page';
+    location.href='list.php?table=$table&page=$page';
     </script>
     ");
    ?>
