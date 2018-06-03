@@ -117,16 +117,16 @@
     <div class="menu">
       <ul class="nav nav-pills nav-fill">
         <li class="nav-item" >
-          <a class="nav-link" href="./menu/list.php">상세일정</a>
+          <a class="nav-link" href="./schedule/list.php">상세일정</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./menu/notice.php">공지사항</a>
+          <a class="nav-link" href="./notice/list.php">공지사항</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./menu/board.php">자유게시판</a>
+          <a class="nav-link" href="./board/list.php">자유게시판</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./menu/anonym_board.php">익명게시판</a>
+          <a class="nav-link" href="./anonym_board/list.php">익명게시판</a>
         </li>
       </ul>
   </div>

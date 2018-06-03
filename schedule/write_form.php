@@ -50,7 +50,14 @@ if($mode=="modify")
    </head>
    <body>
      <div id="wrap">
+       <div id="header">
+         <? include "../top_header.php"; ?>
+       </div>
 
+       <div id="menu">
+         <? include "main_menu.php"; ?>
+       </div>
+       <div id="content">
          <div id="col2">
 
            <div id="title">
@@ -82,7 +89,7 @@ if($mode=="modify")
                    <div class="write_line"></div>
                    <div id="write_row1"><div class="col1"> 이름 </div>
                    <div class="col2"><?=$username?></div>
-                   <?php
+                   <?
                    if($userid && ($mode !="modify"))
                    {
                      ?>
@@ -106,7 +113,7 @@ if($mode=="modify")
                  <div class="col2"><input type="file" name="upfile[]"></div>
                  </div>
                  <div class="clear"></div>
-                 <?php
+                 <?
                  if($mode=="modify" && $item_file_0){
 
                   ?>
@@ -136,7 +143,7 @@ if($mode=="modify")
                 <div class="col2"><input type="file" name="upfile[]"></div>
                 </div>
 
-                <?php
+                <?
                 if($mode=="modify" && $item_file_2)
                 {
                   ?>
@@ -159,5 +166,6 @@ if($mode=="modify")
 
                </div>
              </div>
+           </div>
    </body>
  </html>
