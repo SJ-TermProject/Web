@@ -19,11 +19,11 @@ $item_content=$row[content];
    <body>
    <div id="wrap">
      <div id="header">
-       <? include "../lib/top_login2.php"; ?>
+       <? include "../top_header.php"; ?>
      </div>
 
      <div id="menu">
-       <? include "../lib/top_menu2.php"; ?>
+       <? include "main_menu.php"; ?>
      </div>
 
      <div id="content">

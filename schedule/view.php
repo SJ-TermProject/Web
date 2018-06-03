@@ -60,6 +60,8 @@ mysql_query($sql, $connect);
  <html>
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
      <script>
      function del(href){
@@ -73,11 +75,11 @@ mysql_query($sql, $connect);
    <body>
        <div id="wrap">
          <div id="header">
-           <? include "../lib/top_login2.php"; ?>
+           <? include "../top_header.php"; ?>
          </div>
 
          <div id="menu">
-           <? include "../lib/top_menu2.php"; ?>
+           <? include "main_menu.php"; ?>
          </div>
 
          <div id="content">
