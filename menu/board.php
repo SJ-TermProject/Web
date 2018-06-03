@@ -1,9 +1,7 @@
 <div id="header">
-  <? include "../top_header.php"; ?>
-</div>  <!--end of header-->
-<div id="menu">
-  <? include "main_menu.php"; ?>
+  <? include "../top_header.php";?>
 </div>
-<?
-  echo "자유게시판 페이지입니다.";
-?>
+
+<div id="menu">
+  <? include "main_menu.php";?>
+</div>
