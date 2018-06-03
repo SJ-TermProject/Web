@@ -1,11 +1,14 @@
 <?php
 session_start();
+extract($_POST);
+extract($_GET);
+extract($_SESSION);
 
 include "../lib/dbconn.php";
 
 $sql="select * from $table where num=$num";
 $result = mysql_query($sql, $connect);
-$row=mysql_fetch_Array($result);
+$row=mysql_fetch_array($result);
 
 $copied_name[0] = $row[file_copied_0];
 $copied_name[1] = $row[file_copied_1];
