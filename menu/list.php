@@ -1,3 +1,8 @@
+<?php
+session_start();
+$table="concert";
+ ?>
+
 <div id="header">
   <? include "../top_header.php";?>
 </div>
@@ -6,14 +11,13 @@
   <? include "main_menu.php";?>
 </div>
 
-<?php
-session_start();
-$table="concert";
- ?>
+
  <!DOCTYPE html>
  <html>
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
    </head>
    <?php
@@ -64,11 +68,6 @@ $table="concert";
        </div>
 
        <div id="content">
-         <div id="col1">
-           <div id="left_menu">
-             <? include "../lib/left_menu.php";?>
-           </div>
-         </div>
          <div id="col2">
            <div id="title">
              <img src="../img/title_concert.gif">

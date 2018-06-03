@@ -1,8 +1,7 @@
-<div id="logo"><a href="../index.php"><img src="" border="0">로고</a></div>
-<div id="moto"><img src="">부수적 로고</div>
+<div id="logo"><a href="../index.php"><img src="../img/logo.gif" border="0"></a></div>
+<div id="moto"><img src="../img/moto.gif"></div>
 <div id="top_login">
   <?
-    session_start();
 //  error_reporting(E_ALL & ~E_NOTICE );
 
     $userid = $_SESSION['userid'];

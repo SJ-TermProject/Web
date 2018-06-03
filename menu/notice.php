@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <div id="header">
   <? include "../top_header.php";?>
 </div>
@@ -5,13 +8,12 @@
 <div id="menu">
   <? include "main_menu.php";?>
 </div>
-<?php
-  session_start();
- ?>
  <!DOCTYPE html>
  <html>
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
    </head>
    <?
