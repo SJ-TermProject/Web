@@ -1,4 +1,4 @@
-create table concert (
+create table free (
   num int not null auto_increment,
   id char(10) not null,
   name char(10) not null,
