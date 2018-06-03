@@ -5,7 +5,7 @@ include "../lib/dbconn.php";
 $sql="select * from greet where num=$num";
 $result = mysql_query($sql,$connect);
 
-$row=mysql_fetch_Array($rsult);
+$row=mysql_fetch_Array($result);
 $item_subject=$row[subject];
 $item_content=$row[content];
  ?>
@@ -14,6 +14,8 @@ $item_content=$row[content];
  <html>
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/greet.css" media="all">
      <title></title>
    </head>
    <body>
@@ -27,11 +29,6 @@ $item_content=$row[content];
      </div>
 
      <div id="content">
-       <div id="col1">
-         <div id="left_menu">
-           <? include "../lib/left_menu.php";?>
-         </div>
-       </div>
 
        <div id="col2">
          <div id="title">

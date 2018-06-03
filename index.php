@@ -128,6 +128,9 @@
         <li class="nav-item">
           <a class="nav-link" href="./anonym_board/list.php">익명게시판</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./survey/survey.php">설문조사</a>
+        </li>
       </ul>
   </div>
     <!--달력 일정-->

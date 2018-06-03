@@ -1,6 +1,6 @@
 <?
 session_start();
-$table="concert";
+$table="greet";
 
 include "../lib/dbconn.php";
 
@@ -14,15 +14,6 @@ $item_num = $row[num];
 $item_id = $row[id];
 $item_name = $row[name];
 $item_hit = $row[hit];
-
-$image_name[0] = $row[file_name_0];
-$image_name[1] = $row[file_name_1];
-$image_name[2] = $row[file_name_2];
-
-$image_copied[0] = $row[file_copied_0];
-$image_copied[1] = $row[file_copied_1];
-$image_copied[2] = $row[file_copied_2];
-
 $item_date = $row[regist_day];
 $item_subject = str_replace(" ","&nbsp;",$row[subject]);
 $item_content = $row[content];
@@ -31,24 +22,6 @@ $is_html = $row[is_html];
 if($is_html!="y"){
   $item_content=str_replace(" ","&nbsp;",$item_content);
   $item_content=str_replace("\n","<br>",$item_content);
-}
-
-for($i=0;$i<3;$i++){
-  if($image_copied[$i]){
-    $imageinfo=GetImageSize("./data/".$image_copied[$i]);
-
-    $image_width[$i]=$imageinfo[0];
-    $image_height[$i]=$imageinfo[1];
-    $image_type[$i]=$imageinfo[2];
-
-    if($image_width[$i]>785)
-    $image_width[$i]=785;
-  }
-  else{
-    $image_width[$i]="";
-    $image_height[$i]="";
-    $image_type[$i]="";
-  }
 }
 
 $new_hit=$item_hit + 1;
@@ -62,7 +35,7 @@ mysql_query($sql, $connect);
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/greet.css" media="all">
      <title></title>
      <script>
      function del(href){
@@ -88,7 +61,7 @@ mysql_query($sql, $connect);
            <div id="col2">
 
              <div id="title">
-               <img src="../img/title_concert.gif">
+               <img src="../img/title_greet.gif">
              </div>
 
              <div id="view_comment">&nbsp;</div>
@@ -100,36 +73,25 @@ mysql_query($sql, $connect);
              </div>
 
              <div id="view_content">
-               <?
-               for($i=0;$i<3;$i++){
-                 if($image_copied[$i]){
-                   $img_name=$image_copied[$i];
-                   $img_name="./data/".$img_name;
-                   $img_width=$image_width[$i];
-
-                   echo "<img src='$img_name' width='$img_width'>"."<br><br>";
-                 }
-               }
-               ?>
                <?=$item_content ?>
              </div>
 
              <div id="view_button">
-               <a href="list.php?table=<?=$table?>&page=<?=$page?>">
+               <a href="list.php?page=<?=$page?>">
                 <img src="../img/list.png"></a>&nbsp;
                 <?
-                if($userid==$item_id || $userid=="admin" || $userlevel==1){
+                if($userid==$item_id || $userid=="admin" || $userlevel==0){
                   ?>
-                  <a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-                  <a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')">
+                  <a href="write_form.php?num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
+                  <a href="javascript:del('delete.php?num=<?=$num?>')">
                   <img src="../img/delete.png"></a>&nbsp;
                   <?
                 }
                 ?>
-                <?php
+                <?
                 if($userid){
                   ?>
-                  <a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
+                  <a href="write_form.php"><img src="../img/write.png"></a>
                   <?
                 }
 

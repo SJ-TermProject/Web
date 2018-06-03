@@ -1,5 +1,6 @@
-<?php
+<?
 session_start();
+$table="concert";
 
 include "../lib/dbconn.php";
 
