@@ -26,6 +26,8 @@ if($mode=="modify")
  <html>
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
      <script>
      function check_input()
@@ -47,7 +49,7 @@ if($mode=="modify")
      </script>
    </head>
    <body>
-
+     <div id="wrap">
 
          <div id="col2">
 
@@ -156,6 +158,6 @@ if($mode=="modify")
                  </form>
 
                </div>
-
+             </div>
    </body>
  </html>
