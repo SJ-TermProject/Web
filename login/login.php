@@ -1,3 +1,9 @@
+<?
+  session_start();
+
+  $id = $_POST['id'];
+  $pw = $_POST['pw'];
+?>
 <meta charset="utf-8">
 <?
   //이전 화면에서 이름이 입력되지 않았으면 "이름을 입력하세요."
@@ -24,7 +30,7 @@
 
   include "../lib/dbconn.php";
 
-  $sql = "select * from member where id=$'id'";
+  $sql = "select * from member where id='$id'";
   $result = mysql_query($sql, $connect);
   $num_match = mysql_num_rows($result);
 
