@@ -51,22 +51,7 @@ if($mode=="modify")
      </script>
    </head>
    <body>
-     <div id="wrap">
 
-       <div id="header">
-         <? include "../lib/top_login2.php"; ?>
-       </div>
-
-       <div id="menu">
-         <? include "../lib/top_menu2.php"; ?>
-       </div>
-
-       <div id="content">
-         <div id="col1">
-           <div id="left_menu">
-             <? include "../lib/left_menu.php";?>
-           </div>
-         </div>
 
          <div id="col2">
 
@@ -175,7 +160,6 @@ if($mode=="modify")
                  </form>
 
                </div>
-               </div>
-               </div>
+
    </body>
  </html>
