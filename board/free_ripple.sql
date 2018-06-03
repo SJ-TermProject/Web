@@ -1,4 +1,4 @@
-create table concert (
+create table free_ripple (
   num int not null auto_increment,
   parent int not null,
   id char(15) not null,
