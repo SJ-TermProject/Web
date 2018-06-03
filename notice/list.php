@@ -1,6 +1,6 @@
-<?php
+<?
 session_start();
-$table="concert";
+$table="greet";
 ?>
 
  <!DOCTYPE html>
@@ -8,10 +8,10 @@ $table="concert";
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/greet.css" media="all">
      <title></title>
    </head>
-   <?php
+   <?
    include "../lib/dbconn.php";
    $scale=10;
 
@@ -61,12 +61,12 @@ $table="concert";
        <div id="content">
          <div id="col2">
            <div id="title">
-             <img src="../img/title_concert.gif">
+             <img src="../img/title_greet.gif">
            </div>
 
-           <form name="board_form" action="list.php?table=<?=$table?>&mode=search" method="post">
+           <form name="board_form" action="list.php?mode=search" method="post">
              <div id="list_search">
-               <div id="list_search1"> =>총 <?= $total_record ?> 개의 게시물이 있습니다. </div>
+               <div id="list_search1"> ▷ 총 <?= $total_record ?> 개의 게시물이 있습니다. </div>
                <div id="list_search2"> <img src="../img/select_search.gif"></div>
 
                <div id="list_search3">
@@ -109,18 +109,17 @@ $table="concert";
                ?>
                <div id="list_item">
                  <div id="list_item1"><?=$number ?></div>
-                 <div id="list_item2"><a href="view.php?table=<?=$table?>
-                   &num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a>
+                 <div id="list_item2"><a href="view.php?num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a>
                  </div>
                  <div id="list_item3"><?=$item_date?></div>
                  <div id="list_item4"><?=$item_hit?></div>
                </div>
-               <?php
+               <?
                $number--;
              }
                 ?>
                 <div id="page_button">
-                  <div id="page_num"> 이전 &nbsp;&nbsp;&nbsp;&nbsp;
+                  <div id="page_num"> ◀ 이전 &nbsp;&nbsp;&nbsp;&nbsp;
                     <?
                     for($i=1;$i<=$total_page;$i++){
                       if($page==$i){
@@ -131,10 +130,10 @@ $table="concert";
                       }
                     }
                     ?>
-                    &nbsp;&nbsp;&nbsp;&nbsp;다음
+                    &nbsp;&nbsp;&nbsp;&nbsp; 다음 ▶
                   </div>
                   <div id="button">
-                    <a href="list.php?table=<?=$table?>&page=<?=$page?>">
+                    <a href="list.php?page=<?=$page?>">
                     <img src="../img/list.png"></a>&nbsp;
                     <?
                     if($userid){
