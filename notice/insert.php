@@ -1,7 +1,12 @@
 <? session_start();
 extract($_POST);
    extract($_GET);
-   extract($_SESSION); ?>
+   extract($_SESSION);
+
+   $userid = $_SESSION['userid'];
+   $subject = $_POST['subject'];
+   $content = $_POST['content'];
+?>
   <meta charset="utf-8">
   <?
     if(!$userid){

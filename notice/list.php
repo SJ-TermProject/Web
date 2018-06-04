@@ -3,7 +3,6 @@ session_start();
 extract($_POST);
    extract($_GET);
    extract($_SESSION);
-$table="greet";
 ?>
 
  <!DOCTYPE html>
@@ -30,10 +29,10 @@ $table="greet";
        ");
        exit;
      }
-     $sql="select * from $table where $find like '%search%' order by num desc";
+     $sql="select * from greet where $find like '%search%' order by num desc";
    }
    else{
-     $sql="select * from $table order by num desc";
+     $sql="select * from greet order by num desc";
    }
 
    $result = mysql_query($sql, $connect);
@@ -129,7 +128,7 @@ $table="greet";
                         echo "<b> $i <b>";
                       }
                       else{
-                        echo "<a href='list.php?table=$table&page=$i'> $i </a>";
+                        echo "<a href='list.php?page=$i'> $i </a>";
                       }
                     }
                     ?>
@@ -141,7 +140,7 @@ $table="greet";
                     <?
                     if($userid){
                       ?>
-                      <a href="write_form.php?table=<?=$table?>">
+                      <a href="write_form.php">
                       <img src="../img/write.png"></a>
                       <?
                     }
