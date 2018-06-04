@@ -1,5 +1,10 @@
 <?
   session_start();
+  $num = $_POST['parent'];
+  $userid = $_POST['id'];
+  $username = $_POST['name'];
+  $ripple_content = $_POST['content'];
+  $regist_day = $_POST['regist_day'];
 ?>
 <meta charset="utf-8">
 <?

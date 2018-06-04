@@ -3,9 +3,10 @@
   extract($_POST);
      extract($_GET);
      extract($_SESSION);
-
+$username = $_SESSION['username'];
      $id = $_POST['id'];
      $pw = $_POST['pw'];
+     $page = $_POST['page'];
 ?>
 
  <!DOCTYPE html>
@@ -30,7 +31,7 @@
        <div id="content">
          <div id="col2">
            <div id="title">
-             <img src="../img/title_greet.gif">
+             <img src="../img/title_free.gif">
            </div>
            <div class="clear"></div>
 

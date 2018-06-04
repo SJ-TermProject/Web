@@ -49,7 +49,7 @@ extract($_POST);
     include "../lib/dbconn.php";
 
     if($mode=="modify"){
-      $sql="update greet set subject='$subject',content='$content' where num=$num";
+      $sql="update an_free set subject='$subject',content='$content' where num=$num";
     }
     else {
       if($html_ok=="y"){
