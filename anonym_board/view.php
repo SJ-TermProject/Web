@@ -67,7 +67,7 @@ mysql_query($sql, $connect);
      <script>
      function check_input() {
        if(!document.ripple_form.ripple_content.value) {
-         alert("내용을 입역하세요!");
+         alert("내용을 입력하세요!");
          document.ripple_form.ripple_content.focus();
          return;
        }
@@ -102,7 +102,7 @@ mysql_query($sql, $connect);
 
              <div id="view_title">
                <div id="view_title1"><?=$item_subject ?></div>
-               <div id="view_title2"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
+               <div id="view_title2"> 조회 : <?=$item_hit ?> | <?=$item_date ?>
                </div>
              </div>
 
@@ -136,7 +136,6 @@ mysql_query($sql, $connect);
                ?>
                <div id="ripple_writer_title">
                  <ul>
-                   <li id="writer_title1"><?=$ripple_name?></li>
                    <li id="writer_title2"><?=$ripple_date?></li>
                    <li id="writer_title3">
                      <?

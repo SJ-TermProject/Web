@@ -1,4 +1,7 @@
-<? session_start(); ?>
+<?
+  session_start();
+  $table="concert";
+?>
   <meta charset="utf-8">
   <?
     if(!$userid){
