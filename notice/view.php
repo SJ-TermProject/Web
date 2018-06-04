@@ -13,14 +13,14 @@ $result=mysql_query($sql, $connect);
 
 $row=mysql_fetch_array($result);
 
-$item_num = $row[num];
-$item_id = $row[id];
-$item_name = $row[name];
-$item_hit = $row[hit];
-$item_date = $row[regist_day];
-$item_subject = str_replace(" ","&nbsp;",$row[subject]);
-$item_content = $row[content];
-$is_html = $row[is_html];
+$item_num = $row['num'];
+$item_id = $row['id'];
+$item_name = $row['name'];
+$item_hit = $row['hit'];
+$item_date = $row['regist_day'];
+$item_subject = str_replace(" ","&nbsp;",$row['subject']);
+$item_content = $row['content'];
+$is_html = $row['is_html'];
 
 if($is_html!="y"){
   $item_content=str_replace(" ","&nbsp;",$item_content);

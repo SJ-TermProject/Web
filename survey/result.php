@@ -1,24 +1,24 @@
 <?
 extract($_POST);
    extract($_GET);
-   extract($_SESSION);
+   
   include "../lib/dbconn.php";
 
   $sql="select * from survey";
   $result = mysql_query($sql, $connect);
   $row = mysql_fetch_array($result);
 
-  $total=$row[ans1] + $row[ans2] + $row[ans3] + $row[ans4];
+  $total=$row['ans1'] + $row['ans2'] + $row['ans3'] + $row['ans4'];
 
-  $ans1_percent=$row[ans1]/$total * 100;
-  $ans2_percent=$row[ans2]/$total * 100;
-  $ans3_percent=$row[ans3]/$total * 100;
-  $ans4_percent=$row[ans4]/$total * 100;
+  $ans1_percent=$row['ans1']/$total * 100;
+  $ans2_percent=$row['ans2']/$total * 100;
+  $ans3_percent=$row['ans3']/$total * 100;
+  $ans4_percent=$row['ans4']/$total * 100;
 
-  $ans1_percent=floor(ans_percent);
-  $ans2_percent=floor(ans_percent);
-  $ans3_percent=floor(ans_percent);
-  $ans4_percent=floor(ans_percent);
+  $ans1_percent=floor($ans1_percent);
+  $ans2_percent=floor($ans2_percent);
+  $ans3_percent=floor($ans3_percent);
+  $ans4_percent=floor($ans4_percent);
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +50,7 @@ extract($_POST);
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
         <td> 타레가 (<b><? echo $ans1_percent ?></b> %)
-        <font color=purple><b><? echo $row[ans1] ?></b></font> 명 </td>
+        <font color=purple><b><? echo $row['ans1'] ?></b></font> 명 </td>
         <td></td>
         <td bgcolor='#ffffff'></td>
       </tr>
@@ -78,7 +78,7 @@ extract($_POST);
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
         <td>빌라로보스 (<b><? echo $ans2_percent ?></b> %)
-        <font color=blue><b><? echo $row[ans2] ?></b></font> 명</td>
+        <font color=blue><b><? echo $row['ans2'] ?></b></font> 명</td>
         <td></td>
         <td bgcolor='#ffffff'></td>
       </tr>
@@ -105,7 +105,7 @@ extract($_POST);
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
         <td>끌래양 (<b><? echo $ans3_percent ?></b> %)
-        <font color=green> <b><?echo $row[ans3] ?></b></font> 명</td>
+        <font color=green> <b><?echo $row['ans3'] ?></b></font> 명</td>
         <td></td>
         <td bgcolor='#ffffff'></td>
       </tr>
@@ -133,7 +133,7 @@ extract($_POST);
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
         <td>소르 (<b><? echo $ans4_percent ?></b> %)
-        <font color=skyblue> <b><?echo $row[ans4] ?></b></font> 명</td>
+        <font color=skyblue> <b><?echo $row['ans4'] ?></b></font> 명</td>
         <td></td>
         <td bgcolor='#ffffff'></td>
       </tr>

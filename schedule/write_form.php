@@ -4,28 +4,28 @@ extract($_POST);
    extract($_GET);
    extract($_SESSION);
 
-   $id = $_POST['id'];
-   $pw = $_POST['pw'];
 include "../lib/dbconn.php";
 
+if(isset($mode)){
 if($mode=="modify")
 {
   $sql="select * from $table where num=$num";
   $result = mysql_query($sql, $connect);
   $row = mysql_fetch_array($result);
 
-  $item_subject = $row[subject];
-  $item_content = $row[content];
+  $item_subject = $row['subject'];
+  $item_content = $row['content'];
 
-  $item_file_0=$row[file_name_0];
-  $item_file_1=$row[file_name_1];
-  $item_file_2=$row[file_name_2];
+  $item_file_0=$row['file_name_0'];
+  $item_file_1=$row['file_name_1'];
+  $item_file_2=$row['file_name_2'];
 
   $copied_file_0 = $row[$file_copied_0];
   $copied_file_1 = $row[$file_copied_1];
   $copied_file_2 = $row[$file_copied_2];
 }
 
+}
  ?>
 
  <!DOCTYPE html>
@@ -77,6 +77,7 @@ if($mode=="modify")
            <div class="clear"></div>
 
            <?
+           if(isset($mode)){
             if($mode=="modify")
             {
               ?>
@@ -90,12 +91,17 @@ if($mode=="modify")
                  <form name="board_form" action="insert.php?table=<?=$table?>" method="post" enctype="multipart/form-data">
                    <?
                  }
+               }
+               else{
                  ?>
+                 <form name="board_form" action="insert.php?table=<?=$table?>" method="post" enctype="multipart/form-data">
+                   <?}?>
                  <div id="write_form">
                    <div class="write_line"></div>
                    <div id="write_row1"><div class="col1"> 이름 </div>
                    <div class="col2"><?=$username?></div>
                    <?
+                   if(isset($mode)){
                    if($userid && ($mode !="modify"))
                    {
                      ?>
@@ -103,16 +109,17 @@ if($mode=="modify")
                         HTML 쓰기</div>
                         <?
                    }
+                 }
                      ?>
                    </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>
-                   <div class="col2"><input type="text" name="subject" value="<?=$item_subject?>"></div>
+                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>"></div>
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1">내용</div>
                  <div class="col2"><textarea name="content" rows="15" cols="79">
-                 <?=$item_content?></textarea></div>
+                 <?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div>
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
@@ -120,6 +127,7 @@ if($mode=="modify")
                  </div>
                  <div class="clear"></div>
                  <?
+                 if(isset($mode)){
                  if($mode=="modify" && $item_file_0){
 
                   ?>
@@ -128,12 +136,14 @@ if($mode=="modify")
                     <div class="clear"></div>
                     <?
                   }
+                }
                   ?>
                   <div class="write_line"></div>
                   <div id="write_row5"><div class="col1"> 이미지 파일2</div>
                   <div class="col2"><input type="file" name="upfile[]"></div>
                 </div>
                 <?
+                if(isset($mode)){
                 if($mode=="modify" && $item_file_1)
                 {
                   ?>
@@ -142,6 +152,7 @@ if($mode=="modify")
                     <div class="clear"></div>
                     <?
                 }
+              }
                 ?>
                 <div class="write_line"></div>
                 <div class="clear"></div>
@@ -150,6 +161,7 @@ if($mode=="modify")
                 </div>
 
                 <?
+                if(isset($mode)){
                 if($mode=="modify" && $item_file_2)
                 {
                   ?>
@@ -158,7 +170,7 @@ if($mode=="modify")
                     <div class="clear"></div>
                     <?
                 }
-
+}
                  ?>
                  <div class="write_line"></div>
                  <div class="clear"></div>
