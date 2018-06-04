@@ -1,4 +1,7 @@
 <?
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
   include "../lib/dbconn.php";
 
   $sql="select * from survey";

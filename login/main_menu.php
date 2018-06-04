@@ -13,6 +13,6 @@
     <a class="nav-link" href="../anonym_board/list.php">익명게시판</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../survey/survey.php" onClick="window.open(this.href, '', 'width=400, height=430'); return false;">설문조사</a>
+    <a class="nav-link" href="../survey/survey.php" onClick="window.open(this.href, '', 'width=400, height=400'); return false;">설문조사</a>
   </li>
 </ul>

@@ -1,6 +1,12 @@
 <?php
 session_start();
 $table="concert";
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
+
+$id = $_POST['id'];
+$pw = $_POST['pw'];
  ?>
 
  <!DOCTYPE html>

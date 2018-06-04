@@ -1,5 +1,11 @@
 <?php
 session_start();
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
+
+   $id = $_POST['id'];
+   $pw = $_POST['pw'];
 include "../lib/dbconn.php";
 
 if($mode=="modify")

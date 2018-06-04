@@ -1,5 +1,8 @@
 <?php
 session_start();
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
 $table="greet";
 
 include "../lib/dbconn.php";

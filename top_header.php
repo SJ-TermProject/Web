@@ -3,7 +3,7 @@
 <div id="top_login">
   <?
 //  error_reporting(E_ALL & ~E_NOTICE );
-
+    extract($_SESSION);
     $userid = $_SESSION['userid'];
     $username = $_SESSION['username'];
     $userlevel = $_SESSION['userlevel'];

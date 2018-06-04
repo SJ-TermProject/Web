@@ -1,5 +1,8 @@
 <?
   session_start();
+  extract($_POST);
+     extract($_GET);
+     extract($_SESSION);
 //  error_reporting(E_ALL & ~E_NOTICE );
 
     $userid = $_SESSION['userid'];

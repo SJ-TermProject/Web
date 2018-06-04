@@ -51,7 +51,7 @@
         if($upfile_size[$i]>500000){
           echo("
           <script>
-          alert('업로드 팦일 크기가 지정된 용량(500KB)을 초과합니다!<br>
+          alert('업로드 파일 크기가 지정된 용량(500KB)을 초과합니다!<br>
             파일 크기를 확인해 주세요!');
             history.go(-1)
             </script>

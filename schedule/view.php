@@ -1,5 +1,8 @@
 <?
 session_start();
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
 $table="concert";
 
 include "../lib/dbconn.php";

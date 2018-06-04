@@ -1,7 +1,18 @@
 <? session_start();
 extract($_POST);
    extract($_GET);
-   extract($_SESSION); ?>
+   extract($_SESSION);
+   $userid = $_SESSION['userid'];
+   $subject = $_POST['subject'];
+   $content = $_POST['content'];
+   $regist_day = $_POST['regist_day'];
+   $mode = $_POST['mode'];
+   $id = $_POST['id'];
+   $is_html = $_POST['is_html'];
+   $htm_ok = $_POST['html_ok'];
+   $page = $_POST['page'];
+
+    ?>
   <meta charset="utf-8">
   <?
     if(!$userid){
