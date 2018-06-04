@@ -67,6 +67,19 @@ mysql_query($sql, $connect);
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
      <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
+     <style>
+      #view_title {
+        height: 45px;
+      }
+      #view_title #view_title1 {
+        padding-left: 70px;
+        width: 500px;
+      }
+      #view_title #view_title2 {
+        text-align: center;
+        width: 270px;
+      }
+     </style>
      <script>
      function del(href){
        if(confirm("한번 삭제한 자료는 복구할 방법이 없습니다.\n\n 정말 삭제하시겠습니까?"))
@@ -93,8 +106,6 @@ mysql_query($sql, $connect);
              <div id="title">
                <img src="../img/title_concert.gif">
              </div>
-
-             <div id="view_comment">&nbsp;</div>
 
              <div id="view_title">
                <div id="view_title1"><?=$item_subject ?></div>

@@ -4,7 +4,15 @@ extract($_POST);
    extract($_SESSION);
 
    $userid = $_SESSION['userid'];
+   $username = $_SESSION['username'];
    $subject = $_POST['subject'];
+   if(isset($html_ok)){
+     $html_ok = $_POST['html_ok'];
+   }
+   else{
+     $html_ok="";
+   }
+   if(!isset($mode)) $mode="";
    $content = $_POST['content'];
 ?>
   <meta charset="utf-8">
@@ -43,7 +51,7 @@ extract($_POST);
     include "../lib/dbconn.php";
 
     if($mode=="modify"){
-      $sql="update greet set subject='$subject',content='$content' where num=$num";
+      $sql="update greet set subject='$subject', content='$content' where num=$num";
     }
     else {
       if($html_ok=="y"){
@@ -54,8 +62,8 @@ extract($_POST);
         $content=htmlspecialchars($content);
       }
 
-      $sql="insert into greet (id,name, subject, content, regist_day, hit, is_html)";
-      $sql="values('$userid','$username','$subject','$content','$regist_day',0,'$is_html')";
+      $sql="insert into greet (id, name, subject, content, regist_day, hit, is_html)";
+      $sql.="values('$userid','$username','$subject','$content','$regist_day',0,'$is_html')";
 
     }
 

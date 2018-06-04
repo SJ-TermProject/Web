@@ -20,9 +20,9 @@ if($mode=="modify")
   $item_file_1=$row['file_name_1'];
   $item_file_2=$row['file_name_2'];
 
-  $copied_file_0 = $row[$file_copied_0];
-  $copied_file_1 = $row[$file_copied_1];
-  $copied_file_2 = $row[$file_copied_2];
+  $copied_file_0 = $row['file_copied_0'];
+  $copied_file_1 = $row['file_copied_1'];
+  $copied_file_2 = $row['file_copied_2'];
 }
 
 }
@@ -35,6 +35,68 @@ if($mode=="modify")
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
      <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
+     <style>
+       #write_form_title {
+         height: 40px;
+       }
+       #write_form #write_row1 {
+         height: 34px;
+       }
+       #write_form #write_row1 div.col2 {
+         margin-top: 5px;
+         margin-left: 10px;
+         height: 33px;
+         width: 300px;
+       }
+       #write_form #write_row2 {
+         height: 34px;
+       }
+       #write_form #write_row2 div.col2 {
+         margin-left: 10px;
+         height: 34px;
+       }
+       #write_form #write_row2 div.col2 input{
+         height: 34px;
+         width: 637px;
+       }
+       #write_form #write_row3 {
+         height: 375px;
+       }
+       #write_form #write_row3 div.col1 {
+         padding: 1px;
+         height: 375px;
+       }
+       #write_form #write_row4 {
+         height: 34px;
+       }
+       #write_form #write_row4 div.col2 {
+         height: 34px;
+       }
+       #write_form #write_row4 div.col2 input{
+         width: 647px;
+         height: 30px;
+       }
+       #write_form #write_row5 {
+         height: 34px;
+       }
+       #write_form #write_row5 div.col2 {
+         height: 34px;
+       }
+       #write_form #write_row5 div.col2 input{
+         width: 647px;
+         height: 30px;
+       }
+       #write_form #write_row6 {
+         height: 34px;
+       }
+       #write_form #write_row6 div.col2 {
+         height: 34px;
+       }
+       #write_form #write_row6 div.col2 input{
+         width: 647px;
+         height: 30px;
+       }
+     </style>
      <script>
      function check_input()
      {
@@ -101,7 +163,6 @@ if($mode=="modify")
                    <div id="write_row1"><div class="col1"> 이름 </div>
                    <div class="col2"><?=$username?></div>
                    <?
-                   if(isset($mode)){
                    if($userid && ($mode !="modify"))
                    {
                      ?>
@@ -109,18 +170,16 @@ if($mode=="modify")
                         HTML 쓰기</div>
                         <?
                    }
-                 }
+
                      ?>
                    </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>
-                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>"></div>
+                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px;"></div>
                  </div>
                  <div class="write_line"></div>
-                 <div id="write_row3"><div class="col1">내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="79">
-                 <?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div>
-                 </div>
+                 <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
+                 <div class="col2"><textarea name="content" rows="15" cols="88"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
                  <div class="col2"><input type="file" name="upfile[]"></div>

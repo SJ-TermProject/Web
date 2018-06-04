@@ -160,11 +160,11 @@
       $sql.="'$upfile_name[0]', '$upfile_name[1]','$upfile_name[2]','$copied_file_name[0]','$copied_file_name[1]','$copied_file_name[2]')";
       mysql_query($sql, $connect);
     }
-    echo $sql;
+
     mysql_close();
-    // echo("
-    // <script>
-    // location.href='list.php?table=$table&page=$page';
-    // </script>
-    // ");
+    echo("
+    <script>
+    location.href='list.php?table=$table&page=$page';
+    </script>
+    ");
 ?>

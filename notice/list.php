@@ -22,10 +22,42 @@ extract($_POST);
        #list_top_title {
          height: 40px;
        }
+       #list_top_title #list_title2 {
+         margin-left:240px;
+       }
+       #list_top_title #list_title3 {
+         margin-left:250px;
+       }
+       #list_top_title #list_title4 {
+         margin-left:50px;
+       }
+       #list_top_title #list_title5 {
+         margin-left:50px;
+       }
        #list_item {
          padding: 1px;
          width: 100%;
          height: 30px;
+       }
+       #list_item #list_item1 {
+         margin-left: 5px;
+         width: 40px;
+       }
+       #list_item #list_item2 {
+         margin-left: 20px;
+         width: 490px;
+       }
+       #list_item #list_item3 {
+         margin-left: 5px;
+         width: 60px;
+       }
+       #list_item #list_item4 {
+         margin-left: 5px;
+         width: 120px;
+       }
+       #list_item #list_item5 {
+         margin-left: 10px;
+         width: 30px;
        }
        #page_num {
          float: center;
@@ -136,8 +168,9 @@ extract($_POST);
                  <div id="list_item1"><?=$number ?></div>
                  <div id="list_item2"><a href="view.php?num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a>
                  </div>
-                 <div id="list_item3"><?=$item_date?></div>
-                 <div id="list_item4"><?=$item_hit?></div>
+                 <div id="list_item3"><?=$username?></div>
+                 <div id="list_item4"><?=$item_date?></div>
+                 <div id="list_item5"><?=$item_hit?></div>
                </div>
                <?
                $number--;

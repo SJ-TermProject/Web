@@ -8,9 +8,14 @@
   $userid = $_SESSION['userid'];
   $username = $_SESSION['username'];
   $subject = $_POST['subject'];
-  $html_ok = $_POST['html_ok'];
+  if(isset($html_ok)){
+    $html_ok = $_POST['html_ok'];
+  }
+  else{
+    $html_ok="";
+  }
+  if(!isset($mode)) $mode="";
   $content = $_POST['content'];
-  $page = $_GET['page'];
 
 
 
@@ -40,7 +45,6 @@
     //다중 파일 업로드
     $files=$_FILES['upfile'];
     $count=count($files["name"]);
-
     $upload_dir="./data/";
 
     for($i=0;$i<$count;$i++){
@@ -56,15 +60,16 @@
 
       if(!$upfile_error[$i])
       {
+
         $new_file_name=date("Y_m_d_H_i_s");
         $new_file_name=$new_file_name."_".$i;
         $copied_file_name[$i]=$new_file_name.".".$file_ext;
         $uploaded_file[$i]=$upload_dir.$copied_file_name[$i];
 
-        if($upfile_size[$i]>500000){
+        if($upfile_size[$i]>50000000000){
           echo("
           <script>
-          alert('업로드 파일 크기가 지정된 용량(500KB)을 초과합니다!<br>
+          alert('업로드 파일 크기가 지정된 용량(500KB)을 초과합니다!<br>\
             파일 크기를 확인해 주세요!');
             history.go(-1)
             </script>
@@ -146,15 +151,16 @@
       }
       else{
         $is_html="";
-        $content=htmlspecialchars($connect);
+        $content=htmlspecialchars($content);
       }
 
       $sql="insert into $table (id, name, subject, content, regist_day, hit, is_html, ";
-      $sql.="file_name_0, file_name_1, file_name_2, file_copied_0, file_copied_1, file_copied_2";
-      $sql.="values('$userid',$username','$subject','$content','$regist_day', 0, '$is_html', ";
+      $sql.="file_name_0, file_name_1, file_name_2, file_copied_0, file_copied_1, file_copied_2)";
+      $sql.="values('$userid','$username','$subject','$content','$regist_day', 0, '$is_html', ";
       $sql.="'$upfile_name[0]', '$upfile_name[1]','$upfile_name[2]','$copied_file_name[0]','$copied_file_name[1]','$copied_file_name[2]')";
       mysql_query($sql, $connect);
     }
+
     mysql_close();
     echo("
     <script>

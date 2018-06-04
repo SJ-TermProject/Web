@@ -1,15 +1,19 @@
 <?php
-  session_start();
-  $table="free";
-  $ripple="free_ripple";
-?>
+session_start();
+$table="an_free";
+$ripple="an_free_ripple";
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
+
+ ?>
 
  <!DOCTYPE html>
  <html>
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/board4.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
      <style>
        #list_search {
@@ -21,10 +25,42 @@
        #list_top_title {
          height: 40px;
        }
+       #list_top_title #list_title2 {
+         margin-left:240px;
+       }
+       #list_top_title #list_title3 {
+         margin-left:250px;
+       }
+       #list_top_title #list_title4 {
+         margin-left:50px;
+       }
+       #list_top_title #list_title5 {
+         margin-left:50px;
+       }
        #list_item {
          padding: 1px;
          width: 100%;
          height: 30px;
+       }
+       #list_item #list_item1 {
+         margin-left: 5px;
+         width: 40px;
+       }
+       #list_item #list_item2 {
+         margin-left: 20px;
+         width: 490px;
+       }
+       #list_item #list_item3 {
+         margin-left: 5px;
+         width: 60px;
+       }
+       #list_item #list_item4 {
+         margin-left: 5px;
+         width: 120px;
+       }
+       #list_item #list_item5 {
+         margin-left: 10px;
+         width: 30px;
        }
        #page_num {
          float: center;
@@ -39,6 +75,7 @@
    include "../lib/dbconn.php";
    $scale=10;
 
+if(isset($mode)){
    if($mode=="search")
    {
      if(!$search)
@@ -56,16 +93,19 @@
    else{
      $sql="select * from $table order by num desc";
    }
+ }else{
+   $sql="select * from $table order by num desc";
+ }
 
    $result = mysql_query($sql, $connect);
    $total_record = mysql_num_rows($result);
 
    if($total_record % $scale==0)
-   $total_page=floor($total_record/$scale);
+    $total_page=floor($total_record/$scale);
    else
      $total_page=floor($total_record/$scale) + 1;
 
-     if(!$page)
+     if(!isset($page))
       $page = 1;
 
       $start=($page - 1) * $scale;
@@ -75,17 +115,17 @@
    <body>
      <div id="wrap">
        <div id="header">
-         <? include "../top_header.php";?>
+         <? include "../top_header.php"; ?>
        </div>
 
        <div id="menu">
-         <? include "main_menu.php";?>
+         <? include "main_menu.php"; ?>
        </div>
 
        <div id="content">
          <div id="col2">
            <div id="title">
-             <img src="../img/title_free.gif">
+             <img src="../img/title_concert.gif">
            </div>
 
            <form name="board_form" action="list.php?table=<?=$table?>&mode=search" method="post">
@@ -97,6 +137,7 @@
                  <select name="find">
                    <option value="subject">제목</option>
                    <option value="content">내용</option>
+                   <option value="name">이름</option>
                  </select>
                </div>
 
@@ -116,19 +157,19 @@
              </ul>
            </div>
 
-           <div cid="list_content">
+           <div id="list_content">
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
                mysql_data_seek($result, $i);
 
                $row=mysql_fetch_array($result);
-               $item_num=$row[num];
-               $item_id=$row[id];
-               $item_name=$row[name];
-               $item_hit=$row[hit];
-               $item_date=$row[regist_day];
+               $item_num=$row['num'];
+               $item_id=$row['id'];
+               $item_name=$row['name'];
+               $item_hit=$row['hit'];
+               $item_date=$row['regist_day'];
                $item_date=substr($item_date, 0, 10);
-               $item_subject=str_replace(" ","&nbsp;",$row[subject]);
+               $item_subject=str_replace(" ","&nbsp;",$row['subject']);
 
                $sql="select * from $ripple where parent=$item_num";
                $result2=mysql_query($sql, $connect);
@@ -143,8 +184,9 @@
                       echo "[$num_ripple]";
                    ?>
                  </div>
-                 <div id="list_item3"><?=$item_date?></div>
-                 <div id="list_item4"><?=$item_hit?></div>
+                 <div id="list_item3"><?=$username?></div>
+                 <div id="list_item4"><?=$item_date?></div>
+                 <div id="list_item5"><?=$item_hit?></div>
                </div>
                <?php
                $number--;
