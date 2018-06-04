@@ -11,6 +11,29 @@
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
      <link rel="stylesheet" type="text/css" href="../css/board4.css" media="all">
      <title></title>
+     <style>
+       #list_search {
+         height: 40px;
+       }
+       #list_search #list_search2 {
+         margin-left: 250px;
+       }
+       #list_top_title {
+         height: 40px;
+       }
+       #list_item {
+         padding: 1px;
+         width: 100%;
+         height: 30px;
+       }
+       #page_num {
+         float: center;
+         margin-top: 1px;
+       }
+       #page_button {
+         height: 50px;
+       }
+     </style>
    </head>
    <?php
    include "../lib/dbconn.php";
