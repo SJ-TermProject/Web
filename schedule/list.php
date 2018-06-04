@@ -5,8 +5,6 @@ extract($_POST);
    extract($_GET);
    extract($_SESSION);
 
-$id = $_POST['id'];
-$pw = $_POST['pw'];
  ?>
 
  <!DOCTYPE html>
@@ -21,6 +19,7 @@ $pw = $_POST['pw'];
    include "../lib/dbconn.php";
    $scale=10;
 
+if(isset($mode)){
    if($mode=="search")
    {
      if(!$search)
@@ -38,6 +37,9 @@ $pw = $_POST['pw'];
    else{
      $sql="select * from $table order by num desc";
    }
+ }else{
+   $sql="select * from $table order by num desc";
+ }
 
    $result = mysql_query($sql, $connect);
    $total_record = mysql_num_rows($result);
@@ -47,7 +49,7 @@ $pw = $_POST['pw'];
    else
      $total_page=floor($total_record/$scale) + 1;
 
-     if(!$page)
+     if(!isset($page))
       $page = 1;
 
       $start=($page - 1) * $scale;
@@ -105,13 +107,13 @@ $pw = $_POST['pw'];
                mysql_data_seek($result, $i);
 
                $row=mysql_fetch_array($result);
-               $item_num=$row[num];
-               $item_id=$row[id];
-               $item_name=$row[name];
-               $item_hit=$row[hit];
-               $item_date=$row[regist_day];
+               $item_num=$row['num'];
+               $item_id=$row['id'];
+               $item_name=$row['name'];
+               $item_hit=$row['hit'];
+               $item_date=$row['regist_day'];
                $item_date=substr($item_date, 0, 10);
-               $item_subject=str_replace(" ","&nbsp;",$row[subject]);
+               $item_subject=str_replace(" ","&nbsp;",$row['subject']);
                ?>
                <div id="list_item">
                  <div id="list_item1"><?=$number ?></div>

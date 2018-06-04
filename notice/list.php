@@ -101,13 +101,13 @@ extract($_POST);
                mysql_data_seek($result, $i);
 
                $row=mysql_fetch_array($result);
-               $item_num=$row[num];
-               $item_id=$row[id];
-               $item_name=$row[name];
-               $item_hit=$row[hit];
-               $item_date=$row[regist_day];
+               $item_num=$row['num'];
+               $item_id=$row['id'];
+               $item_name=$row['name'];
+               $item_hit=$row['hit'];
+               $item_date=$row['regist_day'];
                $item_date=substr($item_date, 0, 10);
-               $item_subject=str_replace(" ","&nbsp;",$row[subject]);
+               $item_subject=str_replace(" ","&nbsp;",$row['subject']);
                ?>
                <div id="list_item">
                  <div id="list_item1"><?=$number ?></div>
