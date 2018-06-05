@@ -163,6 +163,7 @@ if($mode=="modify")
                    <div id="write_row1"><div class="col1"> 이름 </div>
                    <div class="col2"><?=$username?></div>
                    <?
+                   if(isset($mode)){
                    if($userid && ($mode !="modify"))
                    {
                      ?>
@@ -170,6 +171,7 @@ if($mode=="modify")
                         HTML 쓰기</div>
                         <?
                    }
+                 }
 
                      ?>
                    </div>
@@ -236,7 +238,10 @@ if($mode=="modify")
                   </div>
                   <div id="write_button"><a href="#">
                   <img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
-                  <a href="list.php?table=<?=$table?>&page=<?=$page?>"> <img src="../img/list.png">
+                  <!-- <a href="list.php?table=<?//=$table?>&page=<?//=$page?>"> <img src="../img/list.png"> -->
+                  <a href="list.php"> <img src="../img/list.png">
+                    
+
                   </a>
                 </div>
                  </form>

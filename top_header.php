@@ -4,11 +4,8 @@
   <?
 //  error_reporting(E_ALL & ~E_NOTICE );
     extract($_SESSION);
-    $userid = $_SESSION['userid'];
-    $username = $_SESSION['username'];
-    $userlevel = $_SESSION['userlevel'];
 
-    if(!$userid) {
+    if(!isset($userid)) {
   ?>
   <a href="../login/login_form.php">로그인</a>
   <a href="../member/member_form.php">회원가입</a>

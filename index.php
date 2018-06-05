@@ -5,10 +5,6 @@
      extract($_SESSION);
 //  error_reporting(E_ALL & ~E_NOTICE );
 
-    $userid = $_SESSION['userid'];
-    $username = $_SESSION['username'];
-    $userlevel = $_SESSION['userlevel'];
-
   date_default_timezone_set('Asia/Tokyo');
 
   if(isset($_GET['ym'])) {
@@ -99,7 +95,7 @@
     <div id="moto"><img src="./img/moto.gif"></div>
     <div id="top_login">
       <?
-        if(!$userid) {
+        if(!isset($userid)) {
       ?>
       <a href="./login/login_form.php">로그인</a>
       <a href="./member/member_form.php">회원가입</a>

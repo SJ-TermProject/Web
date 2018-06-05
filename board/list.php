@@ -124,7 +124,7 @@ if(isset($mode)){
        <div id="content">
          <div id="col2">
            <div id="title">
-             <img src="../img/title_free.gif">
+             <h5>자유게시판</h5>
            </div>
 
            <form name="board_form" action="list.php?table=<?=$table?>&mode=search" method="post">
@@ -206,13 +206,10 @@ if(isset($mode)){
                     &nbsp;&nbsp;&nbsp;&nbsp; 다음 ▶
                   </div>
                   <div id="button">
-                    <a href="list.php?table=<?=$table?>&page=<?=$page?>">
-                    <img src="../img/list.png"></a>&nbsp;
-                    <?
+                    <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">목록</a><?
                     if($userid){
                       ?>
-                      <a href="write_form.php?table=<?=$table?>">
-                      <img src="../img/write.png"></a>
+                      <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">글쓰기</a>
                       <?
                     }
                     ?>

@@ -71,7 +71,7 @@ extract($_POST);
    <?
    include "../lib/dbconn.php";
    $scale=10;
-
+   if(isset($mode)){
    if($mode=="search")
    {
      if(!$search)
@@ -89,6 +89,9 @@ extract($_POST);
    else{
      $sql="select * from greet order by num desc";
    }
+ }else{
+   $sql="select * from greet order by num desc";
+ }
 
    $result = mysql_query($sql, $connect);
    $total_record = mysql_num_rows($result);
@@ -98,7 +101,7 @@ extract($_POST);
    else
      $total_page=floor($total_record/$scale) + 1;
 
-     if(!$page)
+     if(!isset($page))
       $page = 1;
 
       $start=($page - 1) * $scale;
@@ -118,7 +121,7 @@ extract($_POST);
        <div id="content">
          <div id="col2">
            <div id="title">
-             <img src="../img/title_greet.gif">
+             <h5>공지사항</h5>
            </div>
 
            <form name="board_form" action="list.php?mode=search" method="post">
@@ -191,13 +194,10 @@ extract($_POST);
                     &nbsp;&nbsp;&nbsp;&nbsp; 다음 ▶
                   </div>
                   <div id="button">
-                    <a href="list.php?page=<?=$page?>">
-                    <img src="../img/list.png"></a>&nbsp;
-                    <?
-                    if($userid){
+                    <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">목록</a><?
+                    if(isset($userid)){
                       ?>
-                      <a href="write_form.php">
-                      <img src="../img/write.png"></a>
+                      <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">글쓰기</a>
                       <?
                     }
                     ?>

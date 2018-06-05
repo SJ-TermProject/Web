@@ -12,7 +12,7 @@
     <style>
 
     td{
-      padding-left: 10px;
+      padding: 10px;
       border: 1px solid #848484;
     }
 
@@ -139,11 +139,11 @@
         </tr>
         <tr>
           <td bgcolor="lightgray">&nbsp;&nbsp;&nbsp;생일</td>
-          <td><input type="text" id="birth_day" name="birth_day" value="<?= $row['birth_day'] ?>"></td>
+          <td><input type="text" id="birth_day" name="birth_day" value="<?=$row['birth_day'] ?>" placeholder="ex)19971118"></td>
         </tr>
         <tr>
-          <td id="must">
-            * 는 필수 입력항목입니다.^^
+          <td bgcolor="lightgray"id="must">
+            <h6>* 는 필수 입력항목입니다.^^</h6>
           </td>
           <td>
             <div id="button"><a href="#"><img src="../img/button_save.gif" onclick="check_input()"></a>&nbsp;&nbsp;

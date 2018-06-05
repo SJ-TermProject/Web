@@ -4,8 +4,6 @@
      extract($_GET);
      extract($_SESSION);
 
-     $id = $_POST['id'];
-     $pw = $_POST['pw'];
 ?>
 
  <!DOCTYPE html>

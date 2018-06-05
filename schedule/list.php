@@ -124,7 +124,7 @@ if(isset($mode)){
        <div id="content">
          <div id="col2">
            <div id="title">
-             <img src="../img/title_concert.gif">
+             <h5>상세일정</h5>
            </div>
 
            <form name="board_form" action="list.php?table=<?=$table?>&mode=search" method="post">
@@ -159,7 +159,8 @@ if(isset($mode)){
            <div id="list_content">
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
-               mysql_data_seek($result, $i);
+               //mysql_data_seek($result, $i);
+               mysql_num_rows($result);
 
                $row=mysql_fetch_array($result);
                $item_num=$row['num'];
@@ -171,7 +172,7 @@ if(isset($mode)){
                $item_subject=str_replace(" ","&nbsp;",$row['subject']);
                ?>
                <div id="list_item">
-                 <div id="list_item1"><?=$number ?></div>
+                 <div id="list_item1"><?=$number?></div>
                  <div id="list_item2"><a href="view.php?table=<?=$table?>
                    &num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a>
                  </div>
@@ -198,13 +199,11 @@ if(isset($mode)){
                     &nbsp;&nbsp;&nbsp;&nbsp; 다음 ▶
                   </div>
                   <div id="button">
-                    <a href="list.php?table=<?=$table?>&page=<?=$page?>">
-                    <img src="../img/list.png"></a>&nbsp;
+                    <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">목록</a>
                     <?
-                    if($userid){
+                    if(isset($userid)){
                       ?>
-                      <a href="write_form.php?table=<?=$table?>">
-                      <img src="../img/write.png"></a>
+                      <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">글쓰기</a>
                       <?
                     }
                     ?>
