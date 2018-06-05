@@ -1,5 +1,8 @@
 <meta charset="utf-8">
 <?
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
   $id = $_GET['id'];
 
    if(!$id) {

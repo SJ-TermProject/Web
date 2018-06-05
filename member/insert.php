@@ -1,5 +1,8 @@
 <meta charset="euc-kr">
 <?
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
   $id = $_POST['id'];
   $pw = $_POST['pw'];
   $name = $_POST['name'];

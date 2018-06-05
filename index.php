@@ -1,10 +1,9 @@
 <?
   session_start();
+  extract($_POST);
+     extract($_GET);
+     extract($_SESSION);
 //  error_reporting(E_ALL & ~E_NOTICE );
-
-    $userid = $_SESSION['userid'];
-    $username = $_SESSION['username'];
-    $userlevel = $_SESSION['userlevel'];
 
   date_default_timezone_set('Asia/Tokyo');
 
@@ -66,6 +65,7 @@
     <title>PHP calendar</title>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <style>
       .container {
         margin-top: 80px;
@@ -92,11 +92,11 @@
     <div id="wrap">
     <!--상단 헤더-->
     <div id="header">
-    <div id="logo"><a href="index.php"><img src="./img/logo.gif" border="0"></a></div>
+    <div id="logo"><a href="index.php"><i style="color: navy;" class="far fa-calendar-alt fa-4x"></i></a></div>
     <div id="moto"><img src="./img/moto.gif"></div>
     <div id="top_login">
       <?
-        if(!$userid) {
+        if(!isset($userid)) {
       ?>
       <a href="./login/login_form.php">로그인</a>
       <a href="./member/member_form.php">회원가입</a>
@@ -104,9 +104,9 @@
         }
         else {
       ?>
-      <?=$userid?> (level:<?=$userlevel?>) |
+      <?=$username?>(<?=$userid?> level:<?=$userlevel?>) |
       <a href="./login/logout.php">로그아웃</a> |
-      <a href="./login/member_form_modify.php">정보수정</a>
+      <a href="./member/member_form_modify.php">정보수정</a>
       <?
         }
       ?>
@@ -117,16 +117,19 @@
     <div class="menu">
       <ul class="nav nav-pills nav-fill">
         <li class="nav-item" >
-          <a class="nav-link" href="./menu/list.php">상세일정</a>
+          <a class="nav-link" href="./schedule/list.php">상세일정</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./menu/notice.php">공지사항</a>
+          <a class="nav-link" href="./notice/list.php">공지사항</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./menu/board.php">자유게시판</a>
+          <a class="nav-link" href="./board/list.php">자유게시판</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./menu/anonym_board.php">익명게시판</a>
+          <a class="nav-link" href="./anonym_board/list.php">익명게시판</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./survey/survey.php" onClick="window.open(this.href, '', 'width=400, height=300'); return false;">설문조사</a>
         </li>
       </ul>
   </div>
