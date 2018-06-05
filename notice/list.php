@@ -157,8 +157,8 @@ extract($_POST);
            <div cid="list_content">
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
-               //mysql_data_seek($result, $i);
-               mysql_num_rows($result);
+               mysql_data_seek($result, $i);
+               //mysql_num_rows($result);
 
                $row=mysql_fetch_array($result);
                $item_num=$row['num'];
