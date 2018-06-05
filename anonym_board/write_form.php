@@ -1,8 +1,13 @@
 <?php
 session_start();
 extract($_POST);
+<<<<<<< HEAD:anonym_board/write_form.php
    extract($_GET);
    extract($_SESSION);
+=======
+extract($_GET);
+extract($_SESSION);
+>>>>>>> master:menu/write_form.php
 
 include "../lib/dbconn.php";
 
@@ -20,9 +25,15 @@ if($mode=="modify")
   $item_file_1=$row['file_name_1'];
   $item_file_2=$row['file_name_2'];
 
+<<<<<<< HEAD:anonym_board/write_form.php
   $copied_file_0 = $row['file_copied_0'];
   $copied_file_1 = $row['file_copied_1'];
   $copied_file_2 = $row['file_copied_2'];
+=======
+  $copied_file_0 = $row[file_copied_0];
+  $copied_file_1 = $row[file_copied_1];
+  $copied_file_2 = $row[file_copied_2];
+>>>>>>> master:menu/write_form.php
 }
 
 }
@@ -143,8 +154,8 @@ if($mode=="modify")
             if($mode=="modify")
             {
               ?>
-              <form name="board_form" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>&table=<?=$table?>"
-                 method="post" enctype="multipart/form-data">
+              <form name="board_form" method="post" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>&table=<?=$table?>" 
+                enctype="multipart/form-data">
                  <?
                }
                else

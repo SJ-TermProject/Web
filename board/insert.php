@@ -43,7 +43,7 @@
     */
 
     //다중 파일 업로드
-    $files=$_FILES['upfile'];
+    $files=$_FILES["upfile"];
     $count=count($files["name"]);
     $upload_dir="./data/";
 
@@ -69,13 +69,18 @@
         if($upfile_size[$i]>50000000000){
           echo("
           <script>
+<<<<<<< HEAD:board/insert.php
           alert('업로드 파일 크기가 지정된 용량(500KB)을 초과합니다!<br>\
+=======
+          alert('업로드  파일 크기가 지정된 용량(500KB)을 초과합니다!<br>
+>>>>>>> master:menu/insert.php
             파일 크기를 확인해 주세요!');
             history.go(-1)
             </script>
           ");
           exit;
         }
+
         if(($upfile_type[$i]!='image/gif') && ($upfile_type[$i]!="image/jpeg") && ($upfile_type[$i]!="image/pjpeg"))
         {
           echo("
@@ -125,7 +130,7 @@
         if($del_ok[$i]=="y"){
           $delete_field="file_copied_".$i;
           $delete_name=$row[$delete_field];
-          $delete_path="./data/".$delete_name;
+          $delete_path="../data/".$delete_name;
 
           unlink($delete_path);
 
@@ -161,6 +166,31 @@
       mysql_query($sql, $connect);
     }
 
+<<<<<<< HEAD:board/insert.php
+=======
+    $regist_day=date("Y-m-d (H:i)");
+    include "../lib/dbconn.php";
+
+    if($mode=="modify"){
+      $sql="update greet set subject='$subject',content='$content' where num=$num";
+    }
+    else {
+      if($html_ok=="y"){
+        $is_html="y"
+      }
+      else{
+        $is_html="";
+        $content=htmlspecialchars($content);
+      }
+
+      $sql="insert into $table (id, name, subject, content, regist_day, hit, is_html, ";
+      $sql.="file_name_0, file_name_1, file_name_2, file_copied_0, file_copied_1, file_copied_2) ";
+      $sql.="values('$userid','$username','$subject','$content','$regist_day', 0,'$is_html', ";
+      $sql.="'$upfile_name[0]', '$upfile_name[1]', '$upfile_name[2]', '$copied_file_name[0]', '$copied_file_name[1]','$copied_file_name[2]')";
+      mysql_query($sql, $connect);
+    }
+
+>>>>>>> master:menu/insert.php
     mysql_close();
     echo("
     <script>
