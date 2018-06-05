@@ -77,7 +77,7 @@ extract($_POST);
 if(isset($mode)){
    if($mode=="search")
    {
-     if(!$search)
+     if(!$search_name)
      {
        echo("
        <script>
@@ -87,7 +87,7 @@ if(isset($mode)){
        ");
        exit;
      }
-     $sql="select * from $table where $find like '%search%' order by num desc";
+     $sql="select * from $table where $find like '%$search_name%' order by num desc";
    }
    else{
      $sql="select * from $table order by num desc";
@@ -143,7 +143,7 @@ if(isset($mode)){
                  </select>
                </div>
 
-               <div id="list_search4"><input type="text" name="search"></div>
+               <div id="list_search4"><input type="text" name="search_name"></div>
                <div id="list_search5"><button class="btn btn-dark btn-sm" href="#" style="height: 25px; margin-bottom:6px; font-size:12px;">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</button></div>
 
                </div>

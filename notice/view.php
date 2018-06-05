@@ -67,34 +67,36 @@ mysql_query($sql, $connect);
                <h5>공지사항</h5>
              </div>
 
-             <div id="view_comment">&nbsp;</div>
-
-             <div id="view_title">
-               <div id="view_title1"><?=$item_subject ?></div>
-               <div id="view_title2"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
-               </div>
-             </div>
-
-             <div id="view_content">
-               <?=$item_content ?>
-             </div>
+             <table class="table">
+               <thead>
+                 <tr class="table-active" style="background-color: #00418291">
+                   <td scope="col" width='500'><?=$item_subject?></td>
+                   <td scope="col"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?></td>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr style="border-bottom:solid 1px lightgray">
+                   <td height='300' scope="row" colspan="3"><?=$item_content ?></td>
+                 </tr>
+               </tbody>
+             </table>
 
              <div id="view_button">
-               <a href="list.php?page=<?=$page?>">
-                <img src="../img/list.png"></a>&nbsp;
+               <a class="btn btn-outline-secondary" href="list.php?page=<?=$page?>" role="button">목록</a>&nbsp;
                 <?
+                if(isset($userid)){
                 if($userid==$item_id || $userid=="admin" || $userlevel==0){
                   ?>
-                  <a href="write_form.php?num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-                  <a href="javascript:del('delete.php?num=<?=$num?>')">
-                  <img src="../img/delete.png"></a>&nbsp;
+                  <a class="btn btn-outline-secondary" href="modify_form.php?num=<?=$num?>&page=<?=$page?>" role="button">수정</a>&nbsp;
+                  <a class="btn btn-outline-secondary" href="javascript:del('delete.php?num=<?=$num?>')" role="button">삭제</a>&nbsp;
                   <?
                 }
+              }
                 ?>
                 <?
-                if($userid){
+                if(isset($userid)){
                   ?>
-                  <a href="write_form.php"><img src="../img/write.png"></a>
+                    <a class="btn btn-outline-dark" href="write_form.php" role="button">글쓰기</a>&nbsp;
                   <?
                 }
 

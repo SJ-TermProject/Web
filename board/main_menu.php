@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-<ul class="nav nav-pills nav-fill">
+<ul class="nav nav-pills nav-fill" style="background-color: navy; color:#eaeaea;">
   <li class="nav-item">
     <a class="nav-link" href="../schedule/list.php">상세일정</a>
   </li>

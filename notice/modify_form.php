@@ -9,8 +9,8 @@ $sql="select * from greet where num=$num";
 $result = mysql_query($sql,$connect);
 
 $row=mysql_fetch_Array($result);
-$item_subject=$row[subject];
-$item_content=$row[content];
+$item_subject=$row['subject'];
+$item_content=$row['content'];
  ?>
 
  <!DOCTYPE html>
@@ -35,12 +35,12 @@ $item_content=$row[content];
 
        <div id="col2">
          <div id="title">
-           <img src="../img/title_greet.gif">
+           <h5>&nbsp;공지사항</h5>
          </div>
          <div class="clear"></div>
 
          <div id="write_form_title">
-           <img src="../img/write_form_title.gif">
+           <p>글쓰기</p>
          </div>
 
          <div class="clear"></div>

@@ -74,7 +74,7 @@ extract($_POST);
    if(isset($mode)){
    if($mode=="search")
    {
-     if(!$search)
+     if(!$search_name)
      {
        echo("
        <script>
@@ -84,7 +84,7 @@ extract($_POST);
        ");
        exit;
      }
-     $sql="select * from greet where $find like '%search%' order by num desc";
+     $sql="select * from greet where $find like '%$search_name%' order by num desc";
    }
    else{
      $sql="select * from greet order by num desc";
@@ -130,7 +130,7 @@ extract($_POST);
            <form name="board_form" action="list.php?mode=search" method="post">
              <div id="list_search">
                <div id="list_search1"> ▷ 총 <?= $total_record ?> 개의 게시물이 있습니다. </div>
-               <div id="list_search2"> <img src="../img/select_search.gif"></div>
+               <div id="list_search2"> <p style="color: gray;">SELECT</p></div>
 
                <div id="list_search3">
                  <select name="find">
@@ -140,9 +140,8 @@ extract($_POST);
                  </select>
                </div>
 
-               <div id="list_search4"><input type="text" name="search"></div>
-               <div id="list_search5"><input type="image" src="../img/list_search_button.gif"></div>
-               </div>
+               <div id="list_search4"><input type="text" name="search_name"></div>
+               <div id="list_search5"><button class="btn btn-dark btn-sm" href="#" style="height: 25px; margin-bottom:6px; font-size:12px;">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</button></div>
            </form>
            <div class="clear"></div>
 
@@ -150,7 +149,7 @@ extract($_POST);
            <thead id="list_top_title">
              <tr class="text-center">
                <td scope="col">번호</th>
-               <td scope="col-8">제목</th>
+               <td scope="col">제목</th>
                <td scope="col">글쓴이</th>
                <td scope="col">등록일</th>
                <td scope="col">조회</th>

@@ -83,12 +83,12 @@
        <div id="content">
          <div id="col2">
            <div id="title">
-             <img src="../img/title_greet.gif">
+             <h5>공지사항</h5>
            </div>
            <div class="clear"></div>
 
            <div id="write_form_title">
-             <img src="../img/write_form_title.gif">
+             <p>글쓰기</p>
            </div>
            <div class="clear"></div>
 
