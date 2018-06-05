@@ -105,7 +105,7 @@
     {
       $num_checked=count($_POST['del_file']);
       $position=$_POST['del_file'];
-      var_dump($position);
+
       for($i=0; $i<$num_checked; $i++){
         $index=$position[$i];
         $del_ok[$index]="y";
@@ -119,9 +119,14 @@
         $field_org_name="file_name_".$i;
         $field_real_name="file_copied_".$i;
 
-        $org_name_value=$upfile_name[$i];
-        $org_real_value=$copied_file_name[$i];
-
+        if($upfile_name[$i]){
+         $org_name_value=$upfile_name[$i];
+         $org_real_value=$copied_file_name[$i];
+      }
+      else {
+        $org_name_value=$row[$field_org_name];
+        $org_real_value=$row[$field_real_name];
+      }
         if($del_ok[$i]=="y"){
           $delete_field="file_copied_".$i;
           $delete_name=$row[$delete_field];
@@ -129,8 +134,9 @@
 
           unlink($delete_path);
 
-          $sql="update $table set $field_org_name='$org_name_value',
-            $field_real_name='$org_real_value' where num=$num";
+          $sql="update $table set $field_org_name='',
+            $field_real_name='' where num=$num";
+
             mysql_query($sql, $connect);
         }
         else{
@@ -162,9 +168,9 @@
     }
 
     mysql_close();
-    // echo("
-    // <script>
-    // location.href='list.php?table=$table&page=$page';
-    // </script>
-    // ");
+    echo("
+    <script>
+    location.href='list.php?table=$table&page=$page';
+    </script>
+    ");
 ?>

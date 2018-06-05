@@ -172,10 +172,11 @@ if(isset($mode)){
                $item_subject=str_replace(" ","&nbsp;",$row['subject']);
 
                $sql="select * from $ripple where parent=$item_num";
+               echo $sql;
                $result2=mysql_query($sql, $connect);
-               if($result2){
+
                  $num_ripple=mysql_num_rows($result2);
-               }
+
                ?>
                <tr id="item_list">
                  <td scope="row"><?=$number?></th>

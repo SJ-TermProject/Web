@@ -130,12 +130,12 @@ mysql_query($sql, $connect);
                $ripple_result=mysql_query($sql);
 
                while($row_ripple=mysql_fetch_array($ripple_result)) {
-                 $ripple_num=$row_ripple[num];
-                 $ripple_id=$row_ripple[id];
-                 $ripple_name=$row_ripple[name];
-                 $ripple_content=str_replace("\n", "<br>", $row_ripple[content]);
+                 $ripple_num=$row_ripple['num'];
+                 $ripple_id=$row_ripple['id'];
+                 $ripple_name=$row_ripple['name'];
+                 $ripple_content=str_replace("\n", "<br>", $row_ripple['content']);
                  $ripple_content=str_replace(" ", "&nbsp;", $ripple_content);
-                 $ripple_date=$row_ripple[regist_day];
+                 $ripple_date=$row_ripple['regist_day'];
                ?>
                <div id="ripple_writer_title">
                  <ul>
@@ -144,7 +144,7 @@ mysql_query($sql, $connect);
                    <li id="writer_title3">
                      <?
                      if($userid=="admin" || $userid==$ripple_id)
-                      echo "<a href='delete_ripple.php?table=$table&num=$item_num$ripple_num=$ripple_num'>[삭제]</a>";
+                      echo "<a href='delete_ripple.php?table=$table&num=$item_num&ripple_num=$ripple_num'>[삭제]</a>";
                      ?>
                    </li>
                  </ul>
@@ -155,7 +155,7 @@ mysql_query($sql, $connect);
                }
                ?>
 
-               <form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>$num=<?=$item_num?>">
+               <form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
                  <div id="ripple_box">
                    <div id="ripple_box1"><img src="../img/title_comment.gif"></div>
                    <div id="ripple_box2"><textarea rows="5" cols="65" name="ripple_content"></textarea></div>

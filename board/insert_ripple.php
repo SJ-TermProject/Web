@@ -1,5 +1,8 @@
 <?
   session_start();
+  extract($_SESSION);
+  extract($_GET);
+  extract($_POST);
 ?>
 <meta charset="utf-8">
 <?
@@ -14,10 +17,10 @@
   }
   include "../lib/dbconn.php";
 
-  $regist_day=date("Y-m-d (H:i)")
+  $regist_day=date("Y-m-d (H:i)");
 
   $sql="insert into free_ripple (parent, id, name, content, regist_day) ";
-  $sql="values($num, '$userid', '$username', '$ripple_content', '$regist_day')";
+  $sql.="values($num, '$userid', '$username', '$ripple_content', '$regist_day')";
 
   mysql_query($sql, $connect);
   mysql_close();
