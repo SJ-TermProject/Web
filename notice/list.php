@@ -101,12 +101,15 @@ extract($_POST);
    else
      $total_page=floor($total_record/$scale) + 1;
 
-     if(!isset($page))
+     if(!isset($page) || $page==0)
       $page = 1;
 
       $start=($page - 1) * $scale;
       $number=$total_record - $start;
-
+      $tmp = ($page-1)*$scale;
+      $tmp2 = $tmp+$scale;
+      $sql.=" limit $tmp , $tmp2";
+      $result = mysql_query($sql, $connect);
     ?>
    <body>
      <div id="wrap">
@@ -158,7 +161,7 @@ extract($_POST);
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
                //mysql_data_seek($result, $i);
-               mysql_num_rows($result);
+               // mysql_num_rows($result);
 
                $row=mysql_fetch_array($result);
                $item_num=$row['num'];
