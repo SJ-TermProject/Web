@@ -171,11 +171,11 @@ extract($_POST);
                ?>
                <tr id="item_list">
                  <td scope="row"><?=$number?></th>
-                 <td><a href="view.php?table=<?=$table?>
-                   &num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a></td>
+                 <td><a href="view.php?
+                   num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a></td>
 
-                   <td><?=$username?></td>
-                   <td><?//=$regist_day?></td>
+                   <td><?=$item_name?></td>
+                   <td><?=$item_date?></td>
                    <td><?=$item_hit?></td>
                  </tr>
                <?

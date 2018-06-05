@@ -1,7 +1,8 @@
 <?
   session_start();
+  $userid = $_SESSION['userid'];
   $num = $_POST['parent'];
-  $userid = $_POST['id'];
+  $user_id = $_POST['id'];
   $username = $_POST['name'];
   $ripple_content = $_POST['content'];
   $regist_day = $_POST['regist_day'];
@@ -19,10 +20,10 @@
   }
   include "../lib/dbconn.php";
 
-  $regist_day=date("Y-m-d (H:i)")
+  $regist_day=date("Y-m-d (H:i)");
 
-  $sql="insert into free_ripple (parent, id, name, content, regist_day) ";
-  $sql="values($num, '$userid', '$username', '$ripple_content', '$regist_day')";
+  $sql = "insert into an_free_ripple (parent, id, name, content, regist_day) ";
+  $sql .= "values($num, '$user_id', '$username', '$ripple_content', '$regist_day')";
 
   mysql_query($sql, $connect);
   mysql_close();

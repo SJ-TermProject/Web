@@ -159,7 +159,7 @@ if(isset($mode)){
            </thead>
            <tbody id="list_content">
 
-           <div >
+           
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
                //mysql_data_seek($result, $i);
@@ -219,7 +219,7 @@ if(isset($mode)){
               <div class="clear"></div>
 
 
-         </div>
+
 
        </div>
 
