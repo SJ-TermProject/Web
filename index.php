@@ -65,6 +65,7 @@
     <title>PHP calendar</title>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <style>
       .container {
         margin-top: 80px;
@@ -91,7 +92,7 @@
     <div id="wrap">
     <!--상단 헤더-->
     <div id="header">
-    <div id="logo"><a href="index.php"><img src="./img/logo.gif" border="0"></a></div>
+    <div id="logo"><a href="index.php"><i style="color: navy;" class="far fa-calendar-alt fa-4x"></i></a></div>
     <div id="moto"><img src="./img/moto.gif"></div>
     <div id="top_login">
       <?

@@ -143,15 +143,16 @@ extract($_POST);
            </form>
            <div class="clear"></div>
 
-           <div id="list_top_title">
-             <ul>
-               <li id="list_title1"><img src="../img/list_title1.gif"></li>
-               <li id="list_title2"><img src="../img/list_title2.gif"></li>
-               <li id="list_title3"><img src="../img/list_title3.gif"></li>
-               <li id="list_title4"><img src="../img/list_title4.gif"></li>
-               <li id="list_title5"><img src="../img/list_title5.gif"></li>
-             </ul>
-           </div>
+           <table class="table table-hover text-center">
+           <thead id="list_top_title">
+             <tr class="text-center">
+               <td scope="col">번호</th>
+               <td scope="col-8">제목</th>
+               <td scope="col">글쓴이</th>
+               <td scope="col">등록일</th>
+               <td scope="col">조회</th>
+             </tr>
+           </thead>
 
            <div cid="list_content">
              <?
@@ -167,18 +168,21 @@ extract($_POST);
                $item_date=substr($item_date, 0, 10);
                $item_subject=str_replace(" ","&nbsp;",$row['subject']);
                ?>
-               <div id="list_item">
-                 <div id="list_item1"><?=$number ?></div>
-                 <div id="list_item2"><a href="view.php?num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a>
-                 </div>
-                 <div id="list_item3"><?=$username?></div>
-                 <div id="list_item4"><?=$item_date?></div>
-                 <div id="list_item5"><?=$item_hit?></div>
-               </div>
+               <tr id="item_list">
+                 <td scope="row"><?=$number?></th>
+                 <td><a href="view.php?table=<?=$table?>
+                   &num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a></td>
+
+                   <td><?=$username?></td>
+                   <td><?//=$regist_day?></td>
+                   <td><?=$item_hit?></td>
+                 </tr>
                <?
                $number--;
              }
                 ?>
+              </tbody>
+            </table>
                 <div id="page_button">
                   <div id="page_num"> ◀ 이전 &nbsp;&nbsp;&nbsp;&nbsp;
                     <?
@@ -194,10 +198,10 @@ extract($_POST);
                     &nbsp;&nbsp;&nbsp;&nbsp; 다음 ▶
                   </div>
                   <div id="button">
-                    <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">목록</a><?
+                    <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">&nbsp;&nbsp;목록&nbsp;&nbsp;</a><?
                     if(isset($userid)){
                       ?>
-                      <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">글쓰기</a>
+                      <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">&nbsp;&nbsp;글쓰기&nbsp;&nbsp;</a>
                       <?
                     }
                     ?>

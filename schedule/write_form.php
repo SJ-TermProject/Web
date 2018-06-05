@@ -129,12 +129,12 @@ if($mode=="modify")
          <div id="col2">
 
            <div id="title">
-             <img src="../img/title_concert.gif">
+             <h5>상세 일정</h5>
            </div>
            <div class="clear"></div>
 
            <div id="write_form_title">
-             <img src="../img/write_form_title.gif">
+             <p>글쓰기</5>
            </div>
            <div class="clear"></div>
 
@@ -240,7 +240,7 @@ if($mode=="modify")
                   <img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
                   <!-- <a href="list.php?table=<?//=$table?>&page=<?//=$page?>"> <img src="../img/list.png"> -->
                   <a href="list.php"> <img src="../img/list.png">
-                    
+
 
                   </a>
                 </div>
