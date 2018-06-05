@@ -5,9 +5,19 @@ extract($_POST);
    extract($_SESSION);
 $table="free";
 
+if(!$userid) {
+  echo("
+    <script>
+      window.alert('로그인 후 이용하세요.')
+       location.replace('../login/login_form.php');
+    </script>
+  ");
+  exit;
+}
+
 include "../lib/dbconn.php";
 
-$sql="select * from $table where num=$num"; //$num값이 안들어옴**
+$sql="select * from $table where num=$num";
 
 $result=mysql_query($sql, $connect);
 
@@ -67,12 +77,35 @@ mysql_query($sql, $connect);
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
      <link rel="stylesheet" type="text/css" href="../css/board4.css" media="all">
      <title></title>
+     <style>
+      #view_title {
+        height: 45px;
+      }
+      #view_title #view_title1 {
+        padding-left: 70px;
+        width: 500px;
+      }
+      #view_title #view_title2 {
+        text-align: center;
+        width: 270px;
+      }
+      #ripple_writer_title {
+        padding-top: 3px;
+        height: 30px;
+      }
+      #ripple_writer_title #writer_title3 {
+        display:inline-block;
+        height: 40px;
+        padding-left: 150px;
+      }
+     </style>
      <script>
-     function check_input() {
-       if(!document.ripple_form.ripple_content.value) {
+     function check_input()
+     {
+       if(!document.ripple_form.ripple_content.value){
          alert("내용을 입력하세요!");
          document.ripple_form.ripple_content.focus();
-         return;
+         return ;
        }
        document.ripple_form.submit();
      }
@@ -98,7 +131,7 @@ mysql_query($sql, $connect);
          <div id="content">
            <div id="col2">
              <div id="title">
-               <img src="../img/title_free.gif">
+               <h5>자유게시판</h5>
              </div>
 
              <div id="view_comment">&nbsp;</div>
@@ -158,26 +191,28 @@ mysql_query($sql, $connect);
                <form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
                  <div id="ripple_box">
                    <div id="ripple_box1"><img src="../img/title_comment.gif"></div>
-                   <div id="ripple_box2"><textarea rows="5" cols="65" name="ripple_content"></textarea></div>
+                   <div id="ripple_box2"><textarea rows="3" cols="65" name="ripple_content"></textarea></div>
                    <div id="ripple_box3"><a href="#"><img src="../img/ok_ripple.gif" onclick="check_input()"></a></div>
                  </div>
                </form>
              </div>
 
              <div id="view_button">
-               <a href="list.php?table=<?=$table?>&page=<?=$page?>">
+               <a href="list.php">
                 <img src="../img/list.png"></a>&nbsp;
                 <?
-                if($userid && ($userid==$item_id)){
+                if(isset($userid)){
+                if($userid==$item_id || $userid=="admin" || $userlevel==1){
                   ?>
                   <a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
                   <a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')">
                   <img src="../img/delete.png"></a>&nbsp;
                   <?
                 }
+              }
                 ?>
                 <?php
-                if($userid){
+                if(isset($userid)){
                   ?>
                   <a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
                   <?

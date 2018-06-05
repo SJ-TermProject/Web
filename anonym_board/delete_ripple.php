@@ -1,6 +1,6 @@
 <?
   include "../lib/dbconn.php";
-
+  extract($_GET);
   $sql="delete from an_free_ripple where num=$ripple_num";
   mysql_query($sql, $connect);
   mysql_close();

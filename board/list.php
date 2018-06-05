@@ -16,6 +16,7 @@
      <title></title>
      <style>
        #list_search {
+         float: left;
          height: 40px;
        }
        #list_search #list_search2 {
@@ -77,7 +78,7 @@
 if(isset($mode)){
    if($mode=="search")
    {
-     if(!$search)
+     if(!$search_name)
      {
        echo("
        <script>
@@ -87,7 +88,7 @@ if(isset($mode)){
        ");
        exit;
      }
-     $sql="select * from $table where $find like '%search%' order by num desc";
+     $sql="select * from $table where $find like '%$search_name%' order by num desc";
    }
    else{
      $sql="select * from $table order by num desc";
@@ -95,7 +96,6 @@ if(isset($mode)){
  }else {
    $sql="select * from $table order by num desc";
  }
-
    $result = mysql_query($sql, $connect);
    $total_record = mysql_num_rows($result);
 
@@ -104,11 +104,15 @@ if(isset($mode)){
    else
      $total_page=floor($total_record/$scale) + 1;
 
-     if(!isset($page))
+     if(!isset($page) || $page==0)
       $page = 1;
 
       $start=($page - 1) * $scale;
       $number=$total_record - $start;
+      $tmp = ($page-1)*$scale;
+      $tmp2 = $tmp+$scale;
+      $sql.=" limit $tmp , $tmp2";
+      $result = mysql_query($sql, $connect);
 
     ?>
    <body>
@@ -140,7 +144,7 @@ if(isset($mode)){
                  </select>
                </div>
 
-               <div id="list_search4"><input type="text" name="search"></div>
+               <div id="list_search4"><input type="text" name="search_name" style="width: 100px;"></div>
                <div id="list_search5"><button class="btn btn-dark btn-sm" href="#" style="height: 25px; margin-bottom:6px; font-size:12px;">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</button></div>
                </div>
            </form>
@@ -160,7 +164,7 @@ if(isset($mode)){
    <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
                //mysql_data_seek($result, $i);
-               mysql_num_rows($result);
+              // mysql_num_rows($result);
 
                $row=mysql_fetch_array($result);
                $item_num=$row['num'];
@@ -172,10 +176,11 @@ if(isset($mode)){
                $item_subject=str_replace(" ","&nbsp;",$row['subject']);
 
                $sql="select * from $ripple where parent=$item_num";
-               echo $sql;
                $result2=mysql_query($sql, $connect);
 
+               if($result2) {
                  $num_ripple=mysql_num_rows($result2);
+               }
 
                ?>
                <tr id="item_list">
@@ -209,7 +214,7 @@ if(isset($mode)){
                   </div>
                   <div id="button">
                     <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">&nbsp;&nbsp;목록&nbsp;&nbsp;</a><?
-                    if($userid){
+                    if(isset($userid)){
                       ?>
                       <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">&nbsp;&nbsp;글쓰기&nbsp;&nbsp;</a>
                       <?

@@ -3,7 +3,7 @@
   extract($_POST);
      extract($_GET);
      extract($_SESSION);
-  $table="an_free";
+  $table=an_"free";
 
   $userid = $_SESSION['userid'];
   $username = $_SESSION['username'];
@@ -43,7 +43,7 @@
     */
 
     //다중 파일 업로드
-    $files=$_FILES['upfile'];
+    $files=$_FILES["upfile"];
     $count=count($files["name"]);
     $upload_dir="./data/";
 
@@ -69,13 +69,15 @@
         if($upfile_size[$i]>50000000000){
           echo("
           <script>
-          alert('업로드 파일 크기가 지정된 용량(500KB)을 초과합니다!<br>\
+
+          alert('업로드  파일 크기가 지정된 용량(500KB)을 초과합니다!<br>
             파일 크기를 확인해 주세요!');
             history.go(-1)
             </script>
           ");
           exit;
         }
+
         if(($upfile_type[$i]!='image/gif') && ($upfile_type[$i]!="image/jpeg") && ($upfile_type[$i]!="image/pjpeg"))
         {
           echo("
@@ -119,18 +121,24 @@
         $field_org_name="file_name_".$i;
         $field_real_name="file_copied_".$i;
 
+        if($upfile_name[$i]) {
         $org_name_value=$upfile_name[$i];
         $org_real_value=$copied_file_name[$i];
+      }
+      else {
+        $org_name_value=$row[$field_org_name];
+        $org_real_value=$row[$field_real_name];
+      }
 
         if($del_ok[$i]=="y"){
           $delete_field="file_copied_".$i;
           $delete_name=$row[$delete_field];
-          $delete_path="./data/".$delete_name;
+          $delete_path="../data/".$delete_name;
 
           unlink($delete_path);
 
-          $sql="update $table set $field_org_name='$org_name_value',
-            $field_real_name='$org_real_value' where num=$num";
+          $sql="update $table set $field_org_name='e',
+            $field_real_name='' where num=$num";
             mysql_query($sql, $connect);
         }
         else{
@@ -160,6 +168,7 @@
       $sql.="'$upfile_name[0]', '$upfile_name[1]','$upfile_name[2]','$copied_file_name[0]','$copied_file_name[1]','$copied_file_name[2]')";
       mysql_query($sql, $connect);
     }
+
 
     mysql_close();
     echo("

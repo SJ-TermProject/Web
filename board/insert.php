@@ -69,11 +69,8 @@
         if($upfile_size[$i]>50000000000){
           echo("
           <script>
-<<<<<<< HEAD:board/insert.php
-          alert('업로드 파일 크기가 지정된 용량(500KB)을 초과합니다!<br>\
-=======
+
           alert('업로드  파일 크기가 지정된 용량(500KB)을 초과합니다!<br>
->>>>>>> master:menu/insert.php
             파일 크기를 확인해 주세요!');
             history.go(-1)
             </script>
@@ -124,8 +121,14 @@
         $field_org_name="file_name_".$i;
         $field_real_name="file_copied_".$i;
 
+        if($upfile_name[$i]) {
         $org_name_value=$upfile_name[$i];
         $org_real_value=$copied_file_name[$i];
+      }
+      else {
+        $org_name_value=$row[$field_org_name];
+        $org_real_value=$row[$field_real_name];
+      }
 
         if($del_ok[$i]=="y"){
           $delete_field="file_copied_".$i;
@@ -134,8 +137,8 @@
 
           unlink($delete_path);
 
-          $sql="update $table set $field_org_name='$org_name_value',
-            $field_real_name='$org_real_value' where num=$num";
+          $sql="update $table set $field_org_name='e',
+            $field_real_name='' where num=$num";
             mysql_query($sql, $connect);
         }
         else{
@@ -166,31 +169,7 @@
       mysql_query($sql, $connect);
     }
 
-<<<<<<< HEAD:board/insert.php
-=======
-    $regist_day=date("Y-m-d (H:i)");
-    include "../lib/dbconn.php";
 
-    if($mode=="modify"){
-      $sql="update greet set subject='$subject',content='$content' where num=$num";
-    }
-    else {
-      if($html_ok=="y"){
-        $is_html="y"
-      }
-      else{
-        $is_html="";
-        $content=htmlspecialchars($content);
-      }
-
-      $sql="insert into $table (id, name, subject, content, regist_day, hit, is_html, ";
-      $sql.="file_name_0, file_name_1, file_name_2, file_copied_0, file_copied_1, file_copied_2) ";
-      $sql.="values('$userid','$username','$subject','$content','$regist_day', 0,'$is_html', ";
-      $sql.="'$upfile_name[0]', '$upfile_name[1]', '$upfile_name[2]', '$copied_file_name[0]', '$copied_file_name[1]','$copied_file_name[2]')";
-      mysql_query($sql, $connect);
-    }
-
->>>>>>> master:menu/insert.php
     mysql_close();
     echo("
     <script>

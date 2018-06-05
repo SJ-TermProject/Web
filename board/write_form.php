@@ -163,14 +163,15 @@ if($mode=="modify")
                    <div id="write_row1"><div class="col1"> 이름 </div>
                    <div class="col2"><?=$username?></div>
                    <?
-                   if(isset($userid) && (isset($mode) !="modify"))
+                   if(isset($mode)) {
+                   if($userid && ($mode !="modify"))
                    {
                      ?>
                      <div class="col3"><input type="checkbox" name="html_ok" value="y">
                         HTML 쓰기</div>
                         <?
                    }
-
+                 }
                      ?>
                    </div>
                    <div class="write_line"></div>

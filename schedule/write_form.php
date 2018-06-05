@@ -129,7 +129,7 @@ if($mode=="modify")
          <div id="col2">
 
            <div id="title">
-             <h5>상세 일정</h5>
+             <h5>상세일정</h5>
            </div>
            <div class="clear"></div>
 
@@ -181,7 +181,7 @@ if($mode=="modify")
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="88"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="75"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
                  <div class="col2"><input type="file" name="upfile[]"></div>

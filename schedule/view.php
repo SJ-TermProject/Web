@@ -129,7 +129,7 @@ mysql_query($sql, $connect);
              </div>
 
              <div id="view_button">
-               <a href="list.php?table=<?=$table?>&page=<?=$page?>">
+               <a href="list.php">
                 <img src="../img/list.png"></a>&nbsp;
                 <?
                 if(isset($userid)){

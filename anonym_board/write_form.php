@@ -1,13 +1,8 @@
 <?php
 session_start();
 extract($_POST);
-<<<<<<< HEAD:anonym_board/write_form.php
    extract($_GET);
    extract($_SESSION);
-=======
-extract($_GET);
-extract($_SESSION);
->>>>>>> master:menu/write_form.php
 
 include "../lib/dbconn.php";
 
@@ -25,15 +20,9 @@ if($mode=="modify")
   $item_file_1=$row['file_name_1'];
   $item_file_2=$row['file_name_2'];
 
-<<<<<<< HEAD:anonym_board/write_form.php
   $copied_file_0 = $row['file_copied_0'];
   $copied_file_1 = $row['file_copied_1'];
   $copied_file_2 = $row['file_copied_2'];
-=======
-  $copied_file_0 = $row[file_copied_0];
-  $copied_file_1 = $row[file_copied_1];
-  $copied_file_2 = $row[file_copied_2];
->>>>>>> master:menu/write_form.php
 }
 
 }
@@ -51,7 +40,7 @@ if($mode=="modify")
          height: 40px;
        }
        #write_form #write_row1 {
-         height: 34px;
+         height: 0px;
        }
        #write_form #write_row1 div.col2 {
          margin-top: 5px;
@@ -140,12 +129,12 @@ if($mode=="modify")
          <div id="col2">
 
            <div id="title">
-             <img src="../img/title_concert.gif">
+             <h5>익명게시판</h5>
            </div>
            <div class="clear"></div>
 
            <div id="write_form_title">
-             <img src="../img/write_form_title.gif">
+             <p>글쓰기</p>
            </div>
            <div class="clear"></div>
 
@@ -154,8 +143,8 @@ if($mode=="modify")
             if($mode=="modify")
             {
               ?>
-              <form name="board_form" method="post" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>&table=<?=$table?>" 
-                enctype="multipart/form-data">
+              <form name="board_form" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>&table=<?=$table?>"
+                 method="post" enctype="multipart/form-data">
                  <?
                }
                else
@@ -170,18 +159,17 @@ if($mode=="modify")
                  <form name="board_form" action="insert.php?table=<?=$table?>" method="post" enctype="multipart/form-data">
                    <?}?>
                  <div id="write_form">
-                   <div class="write_line"></div>
-                   <div id="write_row1"><div class="col1"> 이름 </div>
-                   <div class="col2"><?=$username?></div>
+                   <div id="write_row1">
                    <?
-                   if(isset($userid) && (isset($mode) !="modify"))
+                   if(isset($mode)) {
+                   if($userid && ($mode !="modify"))
                    {
                      ?>
                      <div class="col3"><input type="checkbox" name="html_ok" value="y">
                         HTML 쓰기</div>
                         <?
                    }
-
+                 }
                      ?>
                    </div>
                    <div class="write_line"></div>
@@ -190,7 +178,7 @@ if($mode=="modify")
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="79"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="75"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
                  <div class="col2"><input type="file" name="upfile[]"></div>
