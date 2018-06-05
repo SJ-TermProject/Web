@@ -64,7 +64,7 @@ mysql_query($sql, $connect);
            <div id="col2">
 
              <div id="title">
-               <img src="../img/title_greet.gif">
+               <h5>공지사항</h5>
              </div>
 
              <div id="view_comment">&nbsp;</div>

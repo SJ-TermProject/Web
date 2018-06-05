@@ -1,32 +1,39 @@
 <?
 session_start();
-$table="free";
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
+
+$table="an_free";
 
 include "../lib/dbconn.php";
 
-$sql="select * from $table where num=$num";
+$sql="select * from $table where num=$num"; //$num값이 안들어옴***
 
 $result=mysql_query($sql, $connect);
 
 $row=mysql_fetch_array($result);
 
-$item_num = $row[num];
-$item_id = $row[id];
-$item_name = $row[name];
-$item_hit = $row[hit];
 
-$image_name[0] = $row[file_name_0];
-$image_name[1] = $row[file_name_1];
-$image_name[2] = $row[file_name_2];
 
-$image_copied[0] = $row[file_copied_0];
-$image_copied[1] = $row[file_copied_1];
-$image_copied[2] = $row[file_copied_2];
 
-$item_date = $row[regist_day];
-$item_subject = str_replace(" ","&nbsp;",$row[subject]);
-$item_content = $row[content];
-$is_html = $row[is_html];
+$item_num = $row['num'];
+$item_id = $row['id'];
+$item_name = $row['name'];
+$item_hit = $row['hit'];
+
+$image_name[0] = $row['file_name_0'];
+$image_name[1] = $row['file_name_1'];
+$image_name[2] = $row['file_name_2'];
+
+$image_copied[0] = $row['file_copied_0'];
+$image_copied[1] = $row['file_copied_1'];
+$image_copied[2] = $row['file_copied_2'];
+
+$item_date = $row['regist_day'];
+$item_subject = str_replace(" ","&nbsp;",$row['subject']);
+$item_content = $row['content'];
+$is_html = $row['is_html'];
 
 if($is_html!="y"){
   $item_content=str_replace(" ","&nbsp;",$item_content);
@@ -102,7 +109,7 @@ mysql_query($sql, $connect);
 
              <div id="view_title">
                <div id="view_title1"><?=$item_subject ?></div>
-               <div id="view_title2"> 조회 : <?=$item_hit ?> | <?=$item_date ?>
+               <div id="view_title2"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
                </div>
              </div>
 
@@ -136,6 +143,7 @@ mysql_query($sql, $connect);
                ?>
                <div id="ripple_writer_title">
                  <ul>
+                   <li id="writer_title1"><?=$ripple_name?></li>
                    <li id="writer_title2"><?=$ripple_date?></li>
                    <li id="writer_title3">
                      <?

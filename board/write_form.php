@@ -129,12 +129,12 @@ if($mode=="modify")
          <div id="col2">
 
            <div id="title">
-             <img src="../img/title_concert.gif">
+             <h5>자유게시판</h5>
            </div>
            <div class="clear"></div>
 
            <div id="write_form_title">
-             <img src="../img/write_form_title.gif">
+             <p>글쓰기</p>
            </div>
            <div class="clear"></div>
 
@@ -163,7 +163,7 @@ if($mode=="modify")
                    <div id="write_row1"><div class="col1"> 이름 </div>
                    <div class="col2"><?=$username?></div>
                    <?
-                   if($userid && ($mode !="modify"))
+                   if(isset($userid) && (isset($mode) !="modify"))
                    {
                      ?>
                      <div class="col3"><input type="checkbox" name="html_ok" value="y">
@@ -179,7 +179,7 @@ if($mode=="modify")
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="88"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="75"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
                  <div class="col2"><input type="file" name="upfile[]"></div>
@@ -236,7 +236,7 @@ if($mode=="modify")
                   </div>
                   <div id="write_button"><a href="#">
                   <img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
-                  <a href="list.php?table=<?=$table?>&page=<?=$page?>"> <img src="../img/list.png">
+                  <a href="list.php"> <img src="../img/list.png">
                   </a>
                 </div>
                  </form>

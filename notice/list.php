@@ -101,12 +101,15 @@ extract($_POST);
    else
      $total_page=floor($total_record/$scale) + 1;
 
-     if(!isset($page))
+     if(!isset($page) || $page==0)
       $page = 1;
 
       $start=($page - 1) * $scale;
       $number=$total_record - $start;
-
+      $tmp = ($page-1)*$scale;
+      $tmp2 = $tmp+$scale;
+      $sql.=" limit $tmp , $tmp2";
+      $result = mysql_query($sql, $connect);
     ?>
    <body>
      <div id="wrap">
@@ -157,8 +160,8 @@ extract($_POST);
            <div cid="list_content">
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
-               mysql_data_seek($result, $i);
-               //mysql_num_rows($result);
+               //mysql_data_seek($result, $i);
+               // mysql_num_rows($result);
 
                $row=mysql_fetch_array($result);
                $item_num=$row['num'];
@@ -171,11 +174,11 @@ extract($_POST);
                ?>
                <tr id="item_list">
                  <td scope="row"><?=$number?></th>
-                 <td><a href="view.php?table=<?=$table?>
-                   &num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a></td>
+                 <td><a href="view.php?
+                   num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a></td>
 
-                   <td><?=$username?></td>
-                   <td><?//=$regist_day?></td>
+                   <td><?=$item_name?></td>
+                   <td><?=$item_date?></td>
                    <td><?=$item_hit?></td>
                  </tr>
                <?

@@ -104,7 +104,7 @@ mysql_query($sql, $connect);
            <div id="col2">
 
              <div id="title">
-               <img src="../img/title_concert.gif">
+               <h5>상세일정</h5>
              </div>
 
              <div id="view_title">

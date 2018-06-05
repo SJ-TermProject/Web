@@ -46,7 +46,7 @@
     $files=$_FILES['upfile'];
     $count=count($files["name"]);
     $upload_dir="./data/";
-
+    var_dump($_FILES);
     for($i=0;$i<$count;$i++){
       $upfile_name[$i]=$files["name"][$i];
       $upfile_tmp_name[$i]=$files["tmp_name"][$i];
@@ -105,7 +105,7 @@
     {
       $num_checked=count($_POST['del_file']);
       $position=$_POST['del_file'];
-
+      var_dump($position);
       for($i=0; $i<$num_checked; $i++){
         $index=$position[$i];
         $del_ok[$index]="y";
@@ -162,9 +162,9 @@
     }
 
     mysql_close();
-    echo("
-    <script>
-    location.href='list.php?table=$table&page=$page';
-    </script>
-    ");
+    // echo("
+    // <script>
+    // location.href='list.php?table=$table&page=$page';
+    // </script>
+    // ");
 ?>

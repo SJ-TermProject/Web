@@ -134,7 +134,7 @@ if($mode=="modify")
            <div class="clear"></div>
 
            <div id="write_form_title">
-             <p>글쓰기</5>
+             <p>글쓰기</p>
            </div>
            <div class="clear"></div>
 
