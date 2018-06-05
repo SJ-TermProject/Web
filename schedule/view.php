@@ -132,6 +132,7 @@ mysql_query($sql, $connect);
                <a href="list.php?table=<?=$table?>&page=<?=$page?>">
                 <img src="../img/list.png"></a>&nbsp;
                 <?
+                if(isset($userid)){
                 if($userid==$item_id || $userid=="admin" || $userlevel==1){
                   ?>
                   <a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
@@ -139,9 +140,11 @@ mysql_query($sql, $connect);
                   <img src="../img/delete.png"></a>&nbsp;
                   <?
                 }
+              }
                 ?>
                 <?php
-                if($userid){
+
+                if(isset($userid)){
                   ?>
                   <a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
                   <?

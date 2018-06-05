@@ -13,6 +13,24 @@
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
      <link rel="stylesheet" type="text/css" href="../css/greet.css" media="all">
      <title></title>
+     <script>
+     function check_input()
+     {
+       if(!document.board_form.subject.value)
+       {
+         alert("제목을 입력하세요!");
+         document.board_form.subject.focus();
+         return ;
+       }
+
+       if(!document.board_form.content.value){
+         alert("내용을 입력하세요!");
+         document.board_form.content.focus();
+         return ;
+       }
+       document.board_form.submit();
+     }
+     </script>
      <style>
      #write_form_title {
        height: 40px;
@@ -88,13 +106,13 @@
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="88"></textarea></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="79"></textarea></div>
                  </div>
                  <div class="write_line"></div>
 
-               </div><div id="write_button"><a href="#">
+               </div><div id="write_button"><a href="#" onclick="check_input()">
                  <img src="../img/ok.png"></a>&nbsp;
-                    <a href="list.php?page=<?=$page?>"> <img src="../img/list.png"></a></div>
+                    <a type="button" href="list.php">목록</a></div>
                  </form>
 
                </div>

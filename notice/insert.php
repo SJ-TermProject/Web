@@ -55,7 +55,7 @@ extract($_POST);
     }
     else {
       if($html_ok=="y"){
-        $is_html="y"
+        $is_html="y";
       }
       else{
         $is_html="";
