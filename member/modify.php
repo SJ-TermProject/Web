@@ -33,4 +33,9 @@
 	   location.href = '../index.php';
 	  </script>
 	";
+
+
+    include '../footer.php';
+
+
 ?>

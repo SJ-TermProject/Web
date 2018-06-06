@@ -194,5 +194,8 @@ td{
 </div>
 </div> <!-- end of wrap -->
 
+<?
+include '../footer.php';
+?>
 </body>
 </html>

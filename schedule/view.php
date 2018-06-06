@@ -143,15 +143,15 @@ mysql_query($sql, $connect);
              </div>
 
              <div id="view_button">
-               <a href="list.php">
-                <img src="../img/list.png"></a>&nbsp;
+
+                <a class="btn btn-outline-secondary" href="list.php" role="button">목록</a>&nbsp;
                 <?
                 if(isset($userid)){
                 if($userid==$item_id || $userid=="admin" || $userlevel==1){
                   ?>
-                  <a href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>"><img src="../img/modify.png"></a>&nbsp;
-                  <a href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')">
-                  <img src="../img/delete.png"></a>&nbsp;
+                  <a class="btn btn-outline-secondary" href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>" role="button">수정</a>&nbsp;
+                  <a class="btn btn-outline-secondary" href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')" role="button">삭제</a>&nbsp;
+
                   <?
                 }
               }
@@ -160,7 +160,7 @@ mysql_query($sql, $connect);
 
                 if(isset($userid)){
                   ?>
-                  <a href="write_form.php?table=<?=$table?>"><img src="../img/write.png"></a>
+                  <a class="btn btn-outline-dark" href="write_form.php?table=<?=$table?>" role="button">글쓰기</a>&nbsp;
                   <?
                 }
 
@@ -172,6 +172,8 @@ mysql_query($sql, $connect);
          </div>
 
        </div>
-
+       <?
+       include '../footer.php';
+?>
    </body>
  </html>

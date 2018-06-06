@@ -102,21 +102,27 @@
                </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>
-                   <div class="col2"><input type="text" name="subject"></div>
+                   <div class="col2"><input type="text" name="subject" style="height:30px; width:643px;"></div>
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="79"></textarea></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="78"></textarea></div>
                  </div>
                  <div class="write_line"></div>
 
-               </div><div id="write_button"><a href="#" onclick="check_input()">
-                 <img src="../img/ok.png"></a>&nbsp;
-                    <a type="button" href="list.php">목록</a></div>
+               </div><div id="write_button">
+                 <a class="btn btn-outline-dark" href="#" onclick="check_input()" role="button">완료</a>
+                  <a class="btn btn-outline-secondary" href="list.php" role="button">목록</a></div>
                  </form>
 
                </div>
              </div>
            </div>
+           <br>
+           <br>
+
+           <?
+           include '../footer.php';
+           ?>
    </body>
  </html>

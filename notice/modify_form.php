@@ -39,34 +39,58 @@ $item_content=$row['content'];
          </div>
          <div class="clear"></div>
 
-         <div id="write_form_title">
+         <!--<div id="write_form_title">
            <p>글쓰기</p>
-         </div>
+         </div>-->
+         <table class="table">
+           <tr id="write_form_title">
+             <td colspan="2" class="text-center table-secondary" style="border-bottom: 4px solid white;">글쓰기</td>
+           </tr>
+
 
          <div class="clear"></div>
-         <form name="board_form" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>" method="post">
 
-           <div id="write_form">
+         <form name="board_form" action="insert.php?mode=modify&num=<?=$num?>&page=<?=$page?>" method="post">
+    <tr>
+      <td scope="col" class="text-center table-secondary" width="150px;">이름</td>
+      <td scope="col"><?=$username?></td>
+    </tr>
+
+
+    <tr>
+      <th scope="row" class="text-center table-secondary">제목</th>
+      <td><input type="text" name="subject" value="<?=$item_subject?>"></td>
+    </tr>
+    <tr>
+      <th scope="row" class="text-center table-secondary">내용</th>
+      <td><textarea name="content" rows="15" cols="79"><?=$item_content?></textarea></td>
+    </tr>
+<div class="write_line"></div>
+</table>
+
+
+           <!-- <div id="write_form">
              <div class="write_line">
              </div>
              <div id="write_row1">
                <div class="col1">이름</div>
-               <div class="col2"><?=$username?></div>
+               <div class="col2"><?//=$username?></div>
             </div>
             <div class="write_line"></div>
             <div id="write_row2"><div class="col1"> 제목 </div>
-            <div class="col2"><input type="text" name="subject" value="<?=$item_subject?>"></div>
+            <div class="col2"><input type="text" name="subject" value="<?//=$item_subject?>"></div>
             </div>
             <div class="write_line"></div>
             <div id="write_row3"><div class="col1"> 내용  </div>
-            <div class="col2"><textarea name="content" rows="15" cols="79">
-              <?=$item_content?></textarea></div>
+            <div class="col2"><textarea name="content" rows="15" cols="78">
+              <?//=$item_content?></textarea></div>
             </div>
             <div class="write_line"></div>
-           </div>
+           </div>-->
 
-           <div id="write_button"><input type="image" src="../img/ok.png">&nbsp;
-             <a href="list.php?page=<?=$page?>"><img src="../img/list.png"></a>
+           <div id="write_button">
+             <button type="submit" class="btn btn-outline-dark btn-sm">완료</button>
+             <a class="btn btn-outline-secondary" href="list.php?page=<?=$page?>" role="button">목록</a>
            </div>
 
          </form>
@@ -76,5 +100,11 @@ $item_content=$row['content'];
      </div>
 
    </div>
+   <br>
+   <br>
+   
+   <?
+   include '../footer.php';
+   ?>
  </body>
  </html>

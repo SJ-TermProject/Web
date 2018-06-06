@@ -220,6 +220,11 @@ extract($_POST);
        </div>
 
      </div>
-
+     <br>
+     <br>
+     
+     <?
+     include '../footer.php';
+     ?>
    </body>
  </html>
