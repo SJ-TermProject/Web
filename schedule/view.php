@@ -7,6 +7,16 @@ $table="concert";
 
 include "../lib/dbconn.php";
 
+if(!$userid) {
+  echo("
+    <script>
+      window.alert('로그인 후 이용하세요.')
+       location.replace('../login/login_form.php');
+    </script>
+  ");
+  exit;
+}
+
 $sql="select * from $table where num=$num";
 
 $result=mysql_query($sql, $connect);

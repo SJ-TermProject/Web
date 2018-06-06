@@ -5,6 +5,7 @@
      extract($_SESSION);
 //  error_reporting(E_ALL & ~E_NOTICE );
 
+
   date_default_timezone_set('Asia/Tokyo');
 
   if(isset($_GET['ym'])) {
@@ -63,6 +64,7 @@
   <head>
     <meta charset="utf-8">
     <title>PHP calendar</title>
+    <? include './calendar.php'; ?>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -86,6 +88,13 @@
       th:nth-of-type(1),td:nth-of-type(1){
         color: red;
       }
+      tbody tr {
+        height: 104px;
+      }
+     tbody td {
+       margin-bottom: 0px;
+       height: 104px;
+     }
     </style>
   </head>
   <body>
@@ -135,7 +144,9 @@
   </div>
     <!--달력 일정-->
     <div class="container">
-      <h3><a href='?ym=<?php echo $prev; ?>'> &lt; </a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>"> &gt; </a></h3>
+
+      <div id='calendar'></div>
+    <!--  <h3><a href='?ym=<?php //echo $prev; ?>'> &lt; </a><?php //echo $html_title; ?><a href="?ym=<?php //echo $next; ?>"> &gt; </a></h3>
       <br>
       <table class="table table-borderd">
         <tr>
@@ -148,9 +159,9 @@
           <th>S</th>
         </tr>
         <?php
-          foreach($weeks as $week) {
-            echo $week;
-          }
+          //foreach($weeks as $week) {
+          //  echo $week;
+          //}
 
         ?>
 
@@ -158,9 +169,10 @@
       </table>
     </div>
     <?php
-    include './footer.php';
+    //include './footer.php';
 
      ?>
+
 
 
   </div>
@@ -169,3 +181,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   </body>
 </html>
+-->
