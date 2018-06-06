@@ -19,6 +19,8 @@
 .fc {
 	direction: ltr;
 	text-align: left;
+	background-color: #c7c8ff;
+	padding: 20px;
 	}
 
 .fc table {
@@ -68,6 +70,7 @@ table.fc-header {
 .fc-header-title {
 	margin-top: 0;
 	white-space: nowrap;
+	color: black;
 	}
 
 .fc-header-space {
@@ -212,7 +215,7 @@ table.fc-header {
 	}
 
 .fc-content .fc-state-highlight { /* today */
-	background: #ffc;
+	background: #786dfb70;
 	}
 
 .fc-content .fc-not-today {

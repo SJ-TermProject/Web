@@ -160,6 +160,7 @@ mysql_query($sql, $connect);
              <div id="ripple">
                <?
                $sql="select * from an_free_ripple where parent='$item_num'";
+               echo $sql;
                $ripple_result=mysql_query($sql);
 
                while($row_ripple=mysql_fetch_array($ripple_result)) {

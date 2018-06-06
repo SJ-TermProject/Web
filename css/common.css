@@ -54,9 +54,9 @@ ul, li {
 
 #header {
 	height:62px;
-/*	border:solid 1px #cccccc;  */
 	margin-top:16px;
-	margin-bottom: 2%;
+	margin-bottom: 10px;
+	/*	border:solid 1px #cccccc;  */
 }
 
 #logo {

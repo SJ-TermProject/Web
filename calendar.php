@@ -1,9 +1,18 @@
+<?
+
+
+include './lib/dbconn.php';
+
+$sql = "select * from concert";
+$result = mysql_query($sql, $connect);
+$total_record = mysql_num_rows($result);
+
+
+	 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
-	<head>
-<link rel='stylesheet' type='text/css' href='http://www.blueb.co.kr/data/201010/IJ12872423858253/fullcalendar.css' />
+<link rel='stylesheet' type='text/css' href='./css/calendar.css'/>
 <script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery.js'></script>
 <script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery-ui-custom.js'></script>
 <script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/fullcalendar.min.js'></script>
@@ -16,59 +25,31 @@
 		var m = date.getMonth();
 		var y = date.getFullYear();
 
+
 		$('#calendar').fullCalendar({
+
+      events: [
+          <?php
+          for($i=0;$i<$total_record;$i++){
+            $row = mysql_fetch_array($result);
+          $s_date = explode("-",$row['s_date']);
+          $e_date = explode("-",$row['e_date']);
+
+        ?>
+        {
+          title: '<?=$row['subject']?>',
+          start: new Date(<?=$s_date[0]?>,<?=$s_date[1]-1?>,<?=$s_date[2]?>),
+          end: new Date(<?=$e_date[0]?>,<?=$e_date[1]-1?>,<?=$e_date[2]?>),
+        },
+        <?}?>
+      ],
 			header: {
 				left: 'prev,next today',
 				center: 'title',
 				right: 'month,basicWeek,basicDay'
 			},
 			editable: true,
-			events: [
-				{
-					title: 'All Day Event',
-					start: new Date(y, m, 1)
-				},
-				{
-					title: 'Long Event',
-					start: new Date(y, m, d-5),
-					end: new Date(y, m, d-2)
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d-3, 16, 0),
-					allDay: false
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d+4, 16, 0),
-					allDay: false
-				},
-				{
-					title: 'Meeting',
-					start: new Date(y, m, d, 10, 30),
-					allDay: false
-				},
-				{
-					title: 'Lunch',
-					start: new Date(y, m, d, 12, 0),
-					end: new Date(y, m, d, 14, 0),
-					allDay: false
-				},
-				{
-					title: 'Birthday Party',
-					start: new Date(y, m, d+1, 19, 0),
-					end: new Date(y, m, d+1, 22, 30),
-					allDay: false
-				},
-				{
-					title: 'Click for Google',
-					start: new Date(y, m, 28),
-					end: new Date(y, m, 29),
-					url: 'http://google.com/'
-				}
-			]
+
 		});
 
 	});
@@ -89,5 +70,3 @@
 		}
 
 </style>
-</head>
-</html>
