@@ -18,8 +18,69 @@ $item_content=$row['content'];
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/greet.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
+     <style>
+       #write_form_title {
+         height: 40px;
+       }
+       #write_form #write_row1 {
+         height: 34px;
+       }
+       #write_form #write_row1 div.col2 {
+         margin-top: 5px;
+         margin-left: 10px;
+         height: 33px;
+         width: 560px;
+       }
+       #write_form #write_row2 {
+         height: 34px;
+       }
+       #write_form #write_row2 div.col2 {
+         margin-left: 10px;
+         height: 34px;
+       }
+       #write_form #write_row2 div.col2 input{
+         height: 34px;
+       }
+       #write_form #write_row3 {
+         height: 375px;
+       }
+       #write_form #write_row3 div.col1 {
+         padding: 1px;
+         height: 375px;
+       }
+       #write_form #write_row4 {
+         height: 34px;
+       }
+       #write_form #write_row4 div.col2 {
+         height: 34px;
+       }
+       #write_form #write_row4 div.col2 input{
+         width: 647px;
+         height: 30px;
+       }
+       #write_form #write_row5 {
+         height: 34px;
+       }
+       #write_form #write_row5 div.col2 {
+         height: 34px;
+       }
+       #write_form #write_row5 div.col2 input{
+         width: 647px;
+         height: 30px;
+       }
+       #write_form #write_row6 {
+         height: 34px;
+       }
+       #write_form #write_row6 div.col2 {
+         height: 34px;
+       }
+       #write_form #write_row6 div.col2 input{
+         width: 647px;
+         height: 30px;
+       }
+     </style>
    </head>
    <body>
    <div id="wrap">
@@ -102,7 +163,7 @@ $item_content=$row['content'];
    </div>
    <br>
    <br>
-   
+
    <?
    include '../footer.php';
    ?>

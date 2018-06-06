@@ -42,14 +42,14 @@ extract($_POST);
       <tr>
         <td height=29 bgcolor='#ffffff'></td>
         <td></td>
-        <td valign=middle><b> 가장 좋아하는 기타 작곡가는?</b></td>
+        <td valign=middle><b> 웹 프로그래밍 기대 학점은? </b></td>
         <td></td>
         <td bgcolor='#ffffff'></td>
       </tr>
       <tr>
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
-        <td> 타레가 (<b><? echo $ans1_percent ?></b> %)
+        <td> A (<b><? echo $ans1_percent ?></b> %)
         <font color=purple><b><? echo $row['ans1'] ?></b></font> 명 </td>
         <td></td>
         <td bgcolor='#ffffff'></td>
@@ -77,7 +77,7 @@ extract($_POST);
       <tr>
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
-        <td>빌라로보스 (<b><? echo $ans2_percent ?></b> %)
+        <td> B (<b><? echo $ans2_percent ?></b> %)
         <font color=blue><b><? echo $row['ans2'] ?></b></font> 명</td>
         <td></td>
         <td bgcolor='#ffffff'></td>
@@ -104,7 +104,7 @@ extract($_POST);
       <tr>
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
-        <td>끌래양 (<b><? echo $ans3_percent ?></b> %)
+        <td> C (<b><? echo $ans3_percent ?></b> %)
         <font color=green> <b><?echo $row['ans3'] ?></b></font> 명</td>
         <td></td>
         <td bgcolor='#ffffff'></td>
@@ -132,7 +132,7 @@ extract($_POST);
       <tr>
         <td height=20 bgcolor='#ffffff'></td>
         <td></td>
-        <td>소르 (<b><? echo $ans4_percent ?></b> %)
+        <td> F (<b><? echo $ans4_percent ?></b> %)
         <font color=skyblue> <b><?echo $row['ans4'] ?></b></font> 명</td>
         <td></td>
         <td bgcolor='#ffffff'></td>

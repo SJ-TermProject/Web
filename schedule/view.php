@@ -5,7 +5,7 @@ extract($_POST);
    extract($_SESSION);
 $table="concert";
 
-include "../lib/dbconn.php";
+
 
 if(!$userid) {
   echo("
@@ -16,6 +16,8 @@ if(!$userid) {
   ");
   exit;
 }
+
+include "../lib/dbconn.php";
 
 $sql="select * from $table where num=$num";
 
@@ -44,10 +46,7 @@ $is_html = $row['is_html'];
 $date_s = $row['s_date'];
 $date_e = $row['e_date'];
 
-if($is_html!="y"){
-  $item_content=str_replace(" ","&nbsp;",$item_content);
-  $item_content=str_replace("\n","<br>",$item_content);
-}
+
 
 for($i=0;$i<3;$i++){
   if($image_copied[$i]){
@@ -122,7 +121,7 @@ mysql_query($sql, $connect);
 
              <div id="view_title">
                <div id="view_title1"><?=$item_subject ?></div>
-               <div id="view_title2"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
+               <div id="view_title2" style="margin-left: 350px;"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
                </div>
              </div>
 

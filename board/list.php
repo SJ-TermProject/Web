@@ -12,63 +12,62 @@
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/board4.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
      <style>
-       #list_search {
-         float: left;
-         height: 40px;
-       }
-       #list_search #list_search2 {
-         margin-left: 250px;
-       }
-       #list_top_title {
-         height: 40px;
-       }
-       #list_top_title #list_title2 {
-         margin-left:240px;
-       }
-       #list_top_title #list_title3 {
-         margin-left:250px;
-       }
-       #list_top_title #list_title4 {
-         margin-left:50px;
-       }
-       #list_top_title #list_title5 {
-         margin-left:50px;
-       }
-       #list_item {
-         padding: 1px;
-         width: 100%;
-         height: 30px;
-       }
-       #list_item #list_item1 {
-         margin-left: 5px;
-         width: 40px;
-       }
-       #list_item #list_item2 {
-         margin-left: 20px;
-         width: 490px;
-       }
-       #list_item #list_item3 {
-         margin-left: 5px;
-         width: 60px;
-       }
-       #list_item #list_item4 {
-         margin-left: 5px;
-         width: 120px;
-       }
-       #list_item #list_item5 {
-         margin-left: 10px;
-         width: 30px;
-       }
-       #page_num {
-         float: center;
-         margin-top: 1px;
-       }
-       #page_button {
-         height: 50px;
-       }
+     #list_search {
+       height: 40px;
+     }
+     #list_search #list_search2 {
+       margin-left: 600px;
+     }
+     #list_top_title {
+       height: 40px;
+     }
+     #list_top_title #list_title2 {
+       margin-left:240px;
+     }
+     #list_top_title #list_title3 {
+       margin-left:250px;
+     }
+     #list_top_title #list_title4 {
+       margin-left:50px;
+     }
+     #list_top_title #list_title5 {
+       margin-left:50px;
+     }
+     #list_item {
+       padding: 1px;
+       width: 100%;
+       height: 30px;
+     }
+     #list_item #list_item1 {
+       margin-left: 5px;
+       width: 40px;
+     }
+     #list_item #list_item2 {
+       margin-left: 20px;
+       width: 490px;
+     }
+     #list_item #list_item3 {
+       margin-left: 5px;
+       width: 60px;
+     }
+     #list_item #list_item4 {
+       margin-left: 5px;
+       width: 120px;
+     }
+     #list_item #list_item5 {
+       margin-left: 10px;
+       width: 30px;
+     }
+     #page_num {
+       float: center;
+       margin-top: 1px;
+     }
+     #page_button {
+       height: 50px;
+     }
      </style>
    </head>
    <?php

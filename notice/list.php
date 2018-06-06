@@ -10,62 +10,65 @@ extract($_POST);
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/greet.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
      <style>
-       #list_search {
-         height: 40px;
-       }
-       #list_search #list_search2 {
-         margin-left: 250px;
-       }
-       #list_top_title {
-         height: 40px;
-       }
-       #list_top_title #list_title2 {
-         margin-left:240px;
-       }
-       #list_top_title #list_title3 {
-         margin-left:250px;
-       }
-       #list_top_title #list_title4 {
-         margin-left:50px;
-       }
-       #list_top_title #list_title5 {
-         margin-left:50px;
-       }
-       #list_item {
-         padding: 1px;
-         width: 100%;
-         height: 30px;
-       }
-       #list_item #list_item1 {
-         margin-left: 5px;
-         width: 40px;
-       }
-       #list_item #list_item2 {
-         margin-left: 20px;
-         width: 490px;
-       }
-       #list_item #list_item3 {
-         margin-left: 5px;
-         width: 60px;
-       }
-       #list_item #list_item4 {
-         margin-left: 5px;
-         width: 120px;
-       }
-       #list_item #list_item5 {
-         margin-left: 10px;
-         width: 30px;
-       }
-       #page_num {
-         float: center;
-         margin-top: 1px;
-       }
-       #page_button {
-         height: 50px;
-       }
+     body {
+       background-color: #efefef;
+     }
+     #list_search {
+       height: 40px;
+     }
+     #list_search #list_search2 {
+       margin-left: 600px;
+     }
+     #list_top_title {
+       height: 40px;
+     }
+     #list_top_title #list_title2 {
+       margin-left:240px;
+     }
+     #list_top_title #list_title3 {
+       margin-left:250px;
+     }
+     #list_top_title #list_title4 {
+       margin-left:50px;
+     }
+     #list_top_title #list_title5 {
+       margin-left:50px;
+     }
+     #list_item {
+       padding: 1px;
+       width: 100%;
+       height: 30px;
+     }
+     #list_item #list_item1 {
+       margin-left: 5px;
+       width: 40px;
+     }
+     #list_item #list_item2 {
+       margin-left: 20px;
+       width: 490px;
+     }
+     #list_item #list_item3 {
+       margin-left: 5px;
+       width: 60px;
+     }
+     #list_item #list_item4 {
+       margin-left: 5px;
+       width: 120px;
+     }
+     #list_item #list_item5 {
+       margin-left: 10px;
+       width: 30px;
+     }
+     #page_num {
+       float: center;
+       margin-top: 1px;
+     }
+     #page_button {
+       height: 50px;
+     }
 
      </style>
    </head>
@@ -123,7 +126,7 @@ extract($_POST);
        </div>
 
        <div id="content">
-         <div id="col2">
+         <div id="col2" style="margin: auto;">
            <div id="title">
              <h5>공지사항</h5>
            </div>
@@ -143,6 +146,7 @@ extract($_POST);
 
                <div id="list_search4"><input type="text" name="search_name"></div>
                <div id="list_search5"><button class="btn btn-dark btn-sm" href="#" style="height: 25px; margin-bottom:6px; font-size:12px;">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</button></div>
+</div>
            </form>
            <div class="clear"></div>
 
@@ -157,7 +161,7 @@ extract($_POST);
              </tr>
            </thead>
 
-
+<tbody id="list_content">
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
                //mysql_data_seek($result, $i);
@@ -203,7 +207,7 @@ extract($_POST);
                   </div>
                   <div id="button">
                     <a href="list.php?page=<?=$page?>" class="btn btn-outline-secondary">&nbsp;&nbsp;목록&nbsp;&nbsp;</a><?
-                    if(isset($userid)){
+                    if($userlevel==0){
                       ?>
                       <a href="write_form.php" class="btn btn-outline-dark">&nbsp;&nbsp;글쓰기&nbsp;&nbsp;</a>
                       <?
@@ -220,7 +224,7 @@ extract($_POST);
 
        </div>
 
-     </div>
+   </div>
      <br>
      <br>
 

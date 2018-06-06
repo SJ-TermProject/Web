@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-    <link rel="stylesheet" type="text/css" href="../css/member.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/member.css?ver=1" media="all">
     <title></title>
   </head>
   <body>
@@ -23,7 +23,7 @@
         <div id="title">
           <img src="../img/title_login.gif">
         </div>
-        <div id="login_form">
+        <div id="login_form" style="margin: auto;">
           <img id="login_msg" src="../img/login_msg.gif">
           <div class="clear"></div>
           <div id="login1">

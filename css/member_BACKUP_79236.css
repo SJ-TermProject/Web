@@ -3,7 +3,15 @@
 }
 
 #content #col2 {
+<<<<<<< HEAD
+	margin : 0 auto;
+	width : 807px;
+	min-height : 558px;
+
+
+=======
 	width: 100%;
+>>>>>>> 01522184d08eafb1aab85ae4aa7b8dfcd2efaa1b
 	/*	border:solid 1px #cccccc; */
 }
 

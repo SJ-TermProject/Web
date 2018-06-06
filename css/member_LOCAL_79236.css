@@ -1,9 +1,9 @@
-#content {
-	width: 1200px;
-}
-
 #content #col2 {
-	width: 100%;
+	margin : 0 auto;
+	width : 807px;
+	min-height : 558px;
+
+
 	/*	border:solid 1px #cccccc; */
 }
 
