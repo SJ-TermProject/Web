@@ -1,7 +1,10 @@
+#content {
+	width: 1200px;
+}
+
 #content #col2 {
-	width:836px;
-	min-height:558px;
-	float:left;
+	width: 100%;
+	/*	border:solid 1px #cccccc; */
 }
 
 #content #col2 #title{

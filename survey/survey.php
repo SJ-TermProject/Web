@@ -45,22 +45,22 @@
           <td></td>
         </tr>
         <tr>
-          <td><b> 가장 좋아하는 기타 작곡가는?</b></td>
+          <td><b> 웹 프로그래밍 기대 학점은? </b></td>
         </tr>
         <tr>
-          <td><input type="radio" name="composer" value="ans1">1. 타레가</td>
-        </tr>
-        <tr height=5><td></td></tr>
-        <tr>
-          <td><input type="radio" name="composer" value="ans2">2. 빌라로보스</td>
+          <td><input type="radio" name="composer" value="ans1">1. A</td>
         </tr>
         <tr height=5><td></td></tr>
         <tr>
-          <td><input type="radio" name="composer" value="ans3">3. 끌레양</td>
+          <td><input type="radio" name="composer" value="ans2">2. B</td>
         </tr>
         <tr height=5><td></td></tr>
         <tr>
-          <td><input type="radio" name="composer" value="ans4">4. 소르</td>
+          <td><input type="radio" name="composer" value="ans3">3. C</td>
+        </tr>
+        <tr height=5><td></td></tr>
+        <tr>
+          <td><input type="radio" name="composer" value="ans4">4. F</td>
         </tr>
         <tr height=7><td></td></tr>
         <tr height=1 bgcolor=#cccccc><td></td></tr>

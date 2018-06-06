@@ -48,8 +48,21 @@ mysql_query($sql, $connect);
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/greet.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css?ver=1" media="all">
      <title></title>
+     <style>
+     #view_title {
+       height: 45px;
+     }
+     #view_title #view_title1 {
+       padding-left: 70px;
+       width: 500px;
+     }
+     #view_title #view_title2 {
+       text-align: center;
+       width: 270px;
+     }
+     </style>
      <script>
      function del(href){
        if(confirm("한번 삭제한 자료는 복구할 방법이 없습니다.\n\n 정말 삭제하시겠습니까?"))
@@ -77,27 +90,19 @@ mysql_query($sql, $connect);
                <h5>공지사항</h5>
              </div>
 
-             <table class="table">
-               <thead>
-                 <tr class="table-active" style="background-color: #00418291">
-                   <td scope="col" width='500'><?=$item_subject?></td>
-                   <td scope="col"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?></td>
-                 </tr>
-               </thead>
-               <tbody>
-                 <tr style="border-bottom:solid 1px lightgray">
-                   <td height='300' scope="row" colspan="3"><?=$item_content ?></td>
-                 </tr>
-               </tbody>
-             </table>
-
+             <div id="view_title">
+               <div id="view_title1"><?=$item_subject ?></div>
+               <div id="view_title2" style="margin-left: 350px;"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
+               </div>
+             </div>
+             <div id="view_content"><?=$item_content ?></div>
              <div id="view_button">
-               <a class="btn btn-outline-secondary" href="list.php?page=<?=$page?>" role="button">목록</a>&nbsp;
+               <a class="btn btn-outline-secondary" href="list.php?" role="button">목록</a>&nbsp;
                 <?
                 if(isset($userid)){
                 if($userid==$item_id || $userid=="admin" || $userlevel==0){
                   ?>
-                  <a class="btn btn-outline-secondary" href="modify_form.php?num=<?=$num?>&page=<?=$page?>" role="button">수정</a>&nbsp;
+                  <a class="btn btn-outline-secondary" href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>" role="button">수정</a>&nbsp;
                   <a class="btn btn-outline-secondary" href="javascript:del('delete.php?num=<?=$num?>')" role="button">삭제</a>&nbsp;
                   <?
                 }

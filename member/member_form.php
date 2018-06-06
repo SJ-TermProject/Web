@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
-<link href="../css/member.css" rel="stylesheet" type="text/css" media="all">
+<link href="../css/member.css?ver=1" rel="stylesheet" type="text/css" media="all">
 <style>
 
 td{
@@ -99,7 +99,7 @@ td{
 			<img src="../img/title_join.gif">
 		</div>
 
-    <table id="form_join">
+    <table id="form_join" style="margin: auto;">
 
       <tr>
         <td bgcolor="lightgray">* 아이디(학번)</td>

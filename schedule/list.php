@@ -11,63 +11,66 @@ extract($_POST);
  <html>
    <head>
      <meta charset="utf-8">
-     <link rel="stylesheet" type="text/css" href="../css/common.css?ver=3" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/common.css?" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css?" media="all">
      <title></title>
      <style>
-       #list_search {
-         height: 40px;
-       }
-       #list_search #list_search2 {
-         margin-left: 250px;
-       }
-       #list_top_title {
-         height: 40px;
-       }
-       #list_top_title #list_title2 {
-         margin-left:240px;
-       }
-       #list_top_title #list_title3 {
-         margin-left:250px;
-       }
-       #list_top_title #list_title4 {
-         margin-left:50px;
-       }
-       #list_top_title #list_title5 {
-         margin-left:50px;
-       }
-       #list_item {
-         padding: 1px;
-         width: 100%;
-         height: 30px;
-       }
-       #list_item #list_item1 {
-         margin-left: 5px;
-         width: 40px;
-       }
-       #list_item #list_item2 {
-         margin-left: 20px;
-         width: 490px;
-       }
-       #list_item #list_item3 {
-         margin-left: 5px;
-         width: 60px;
-       }
-       #list_item #list_item4 {
-         margin-left: 5px;
-         width: 120px;
-       }
-       #list_item #list_item5 {
-         margin-left: 10px;
-         width: 30px;
-       }
-       #page_num {
-         float: center;
-         margin-top: 1px;
-       }
-       #page_button {
-         height: 50px;
-       }
+     body {
+       background-color: #efefef;
+     }
+     #list_search {
+       height: 40px;
+     }
+     #list_search #list_search2 {
+       margin-left: 600px;
+     }
+     #list_top_title {
+       height: 40px;
+     }
+     #list_top_title #list_title2 {
+       margin-left:240px;
+     }
+     #list_top_title #list_title3 {
+       margin-left:250px;
+     }
+     #list_top_title #list_title4 {
+       margin-left:50px;
+     }
+     #list_top_title #list_title5 {
+       margin-left:50px;
+     }
+     #list_item {
+       padding: 1px;
+       width: 100%;
+       height: 30px;
+     }
+     #list_item #list_item1 {
+       margin-left: 5px;
+       width: 40px;
+     }
+     #list_item #list_item2 {
+       margin-left: 20px;
+       width: 490px;
+     }
+     #list_item #list_item3 {
+       margin-left: 5px;
+       width: 60px;
+     }
+     #list_item #list_item4 {
+       margin-left: 5px;
+       width: 120px;
+     }
+     #list_item #list_item5 {
+       margin-left: 10px;
+       width: 30px;
+     }
+     #page_num {
+       float: center;
+       margin-top: 1px;
+     }
+     #page_button {
+       height: 50px;
+     }
      </style>
    </head>
    <?php
@@ -125,12 +128,12 @@ if(isset($mode)){
        </div>
 
        <div id="content">
-         <div id="col2" >
+         <div id="col2" style="margin: auto;">
            <div id="title">
              <h5>상세일정</h5>
            </div>
 
-           <form name="board_form" action="list.php?table=<?=$table?>&mode=search" method="post">
+           <form name="board_form" action="list.php?mode=search" method="post">
              <div id="list_search">
                <div id="list_search1"> ▷ 총 <?= $total_record ?> 개의 게시물이 있습니다. </div>
                  <div id="list_search2"> <p style="color: gray;">SELECT</p></div>
@@ -209,7 +212,7 @@ if(isset($mode)){
                   <div id="button">
                     <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">&nbsp;&nbsp;목록&nbsp;&nbsp;</a>
                     <?
-                    if(isset($userid)){
+                    if($userlevel==0 || $userlevel==1){
                       ?>
                       <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">&nbsp;&nbsp;글쓰기&nbsp;&nbsp;</a>
                       <?

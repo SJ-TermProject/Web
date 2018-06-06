@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="logo"><a href="../index.php"><i style="color: navy;" class="far fa-calendar-alt fa-4x"></i></a></div>
-    <div id="moto"><img src="../img/moto.gif"></div>
+    <div id="moto"><img src="../img/logo1.png" style="width:300px;"></div>
     <div id="top_login">
       <?
     //  error_reporting(E_ALL & ~E_NOTICE );

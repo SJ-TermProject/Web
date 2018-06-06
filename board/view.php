@@ -75,7 +75,7 @@ mysql_query($sql, $connect);
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/board4.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/board4.css?ver=1" media="all">
      <title></title>
      <style>
       #view_title {
@@ -138,7 +138,7 @@ mysql_query($sql, $connect);
 
              <div id="view_title">
                <div id="view_title1"><?=$item_subject ?></div>
-               <div id="view_title2"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
+               <div id="view_title2" style="margin-left: 350px;"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?>
                </div>
              </div>
 
@@ -177,7 +177,7 @@ mysql_query($sql, $connect);
                    <li id="writer_title3">
                      <?
                      if($userid=="admin" || $userid==$ripple_id)
-                      echo "<a href='delete_ripple.php?table=$table&num=$item_num&ripple_num=$ripple_num'>[삭제]</a>";
+                      echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='delete_ripple.php?table=$table&num=$item_num&ripple_num=$ripple_num'>[삭제]</a>";
                      ?>
                    </li>
                  </ul>
@@ -191,7 +191,7 @@ mysql_query($sql, $connect);
                <form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
                  <div id="ripple_box">
                    <div id="ripple_box1"><img src="../img/title_comment.gif"></div>
-                   <div id="ripple_box2"><textarea rows="3" cols="65" name="ripple_content"></textarea></div>
+                   <div id="ripple_box2"><textarea rows="3" cols="120" name="ripple_content"></textarea></div>
                    <div id="ripple_box3"><a href="#"><img src="../img/ok_ripple.gif" onclick="check_input()"></a></div>
                  </div>
                </form>
@@ -202,7 +202,7 @@ mysql_query($sql, $connect);
                 <a class="btn btn-outline-secondary" href="list.php" role="button">목록</a>&nbsp;
                 <?
                 if(isset($userid)){
-                if($userid==$item_id || $userid=="admin" || $userlevel==1){
+                if($userid==$item_id || $userid=="admin" || $userlevel==0){
                   ?>
                   <a class="btn btn-outline-secondary" href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>" role="button">수정</a>&nbsp;
                   <a class="btn btn-outline-secondary" href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')" role="button">삭제</a>&nbsp;
