@@ -149,6 +149,28 @@
     <!--달력 일정-->
     <div class="container">
 
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="첫번째 슬라이드">
+        </div>
+        <div class="carousel-item">
+          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="두번째 슬라이드">
+        </div>
+        <div class="carousel-item">
+          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="세번째 슬라이드">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">이전</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">다음</span>
+      </a>
+      </div>
+
       <div id='calendar'></div>
     <!--  <h3><a href='?ym=<?php //echo $prev; ?>'> &lt; </a><?php //echo $html_title; ?><a href="?ym=<?php //echo $next; ?>"> &gt; </a></h3>
       <br>
