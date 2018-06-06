@@ -1,7 +1,7 @@
 
 body {
-	margin:0;
-	padding:0;
+	margin:0px;
+	padding:0px;
 	background-repeat:repeat-x;
 	font-size:12px;
 	font-weight:normal;
@@ -20,7 +20,7 @@ a:hover, a:visited, a:link, a:active {
 	/*font-family:"����";*/
 	font-size:12px;
 	font-weight:normal;
-	color:#555555;
+	color:#c1c1c1;
 }
 
 .menu a:hover {
@@ -90,8 +90,7 @@ ul, li {
 	margin-top:0px;
 	/*width:998px;*/
 	min-height: 600px;
-	margin-left: auto;
-	margin-right: auto;
+
 }
 
 #content #main_img {
@@ -99,16 +98,14 @@ ul, li {
 }
 
 #content #col1 {
+	margin-left: 0 auto;
 	margin-top:20px;
 	width:160px;
 	min-height:600px;
 	float:left;
 	border-right:solid 1px #dddddd;
 }
-#content #col2 {
-	margin-left: 80px;
 
-}
 
 #left_menu {
 	width:92%;

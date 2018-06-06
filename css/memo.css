@@ -1,10 +1,10 @@
 #content #col2 {
-	width:810px;
-	min-height:558px;
-	float:left;
-	margin-left:15px;
+	margin : 0 auto;
+	width : 807px;
+	min-height : 558px;
 
-/*	border:solid 1px #cccccc; */
+
+	/*	border:solid 1px #cccccc; */
 }
 
 #content #col2 #title{
@@ -29,8 +29,8 @@
 }
 
 #memo_row1 #memo_writer {
-	margin-top:10px; 
-	margin-bottom:10px;   
+	margin-top:10px;
+	margin-bottom:10px;
 }
 
 #memo1 textarea {
@@ -39,7 +39,7 @@
 
 #memo_writer_title {
 	height:26px;
-	padding-top:10px; 
+	padding-top:10px;
 	margin-bottom:10px;
 	border-top:solid 1px #cccccc;
 	border-bottom:dotted 1px #cccccc;

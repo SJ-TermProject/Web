@@ -77,9 +77,9 @@ mysql_query($sql, $connect);
                <h5>공지사항</h5>
              </div>
 
-             <table class="table">
+             <table class="table"  style="margin:0px auto;">
                <thead>
-                 <tr class="table-active" style="background-color: #00418291">
+                 <tr class="table-active" style="background-color: #eeeeee;">
                    <td scope="col" width='500'><?=$item_subject?></td>
                    <td scope="col"><?=$item_name ?> | 조회 : <?=$item_hit ?> | <?=$item_date ?></td>
                  </tr>

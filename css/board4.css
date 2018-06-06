@@ -1,8 +1,8 @@
 #content #col2 {
-	width:807px;
+margin: 0px auto;
 	min-height:558px;
 	float:left;
-	margin-left:15px;
+
 /*	border:solid 1px #cccccc; */
 }
 
@@ -11,6 +11,8 @@
 	height:30px;
 	border-bottom:solid 1px #cccccc;
 }
+
+
 
 /* list css */
 
