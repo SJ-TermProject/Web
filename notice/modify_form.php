@@ -100,5 +100,11 @@ $item_content=$row['content'];
      </div>
 
    </div>
+   <br>
+   <br>
+   
+   <?
+   include '../footer.php';
+   ?>
  </body>
  </html>

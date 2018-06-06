@@ -108,6 +108,8 @@ mysql_query($sql, $connect);
          </div>
 
        </div>
-
+       <?
+       include '../footer.php';
+       ?>
    </body>
  </html>

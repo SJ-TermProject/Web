@@ -228,6 +228,8 @@ if(isset($mode)){
        </div>
 
      </div>
-
+     <?
+     include '../footer.php';
+     ?>
    </body>
  </html>

@@ -118,6 +118,8 @@
                </div>
              </div>
            </div>
+           <br>
+           <br>
 
            <?
            include '../footer.php';

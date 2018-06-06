@@ -3,7 +3,7 @@
   extract($_POST);
      extract($_GET);
      extract($_SESSION);
-  $table=an_"free";
+  $table="an_free";
 
   $userid = $_SESSION['userid'];
   $username = $_SESSION['username'];
