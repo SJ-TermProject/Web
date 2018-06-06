@@ -183,6 +183,7 @@ if(isset($mode)){
                ?>
                <tr id="item_list">
                  <td scope="row"><?=$number?></th>
+
                  <td><a href="view.php?table=<?=$table?>
                    &num=<?=$item_num?>&page=<?=$page?>"><?=$item_subject?></a><?="[".$num_ripple."]"?></td>
 
