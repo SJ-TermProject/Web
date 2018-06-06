@@ -1,3 +1,25 @@
+<?
+session_start();
+extract($_POST);
+   extract($_GET);
+   extract($_SESSION);
+$table="concert";
+
+include "../lib/dbconn.php";
+
+$sql="select * from $table where num=$num";
+
+$result=mysql_query($sql, $connect);
+
+$row=mysql_fetch_array($result);
+
+$item_num = $row['num'];
+$item_id = $row['id'];
+$item_content = $row['content'];
+$date_s = $row['s_date'];
+$date_e = $row['e_date'];
+?>
+
 <link rel='stylesheet' type='text/css' href='./css/calendar.css' />
 <script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery.js'></script>
 <script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery-ui-custom.js'></script>
@@ -23,52 +45,7 @@
 					title: 'All Day Event',
 					start: new Date(y, m, 1)
 				},
-				{
-					title: 'Long Event',
-					start: new Date(y, m, d-5),
-					end: new Date(y, m, d-2)
-				},
-				{
-					id: 999,
-					title: 'Repeating Event1',
-					start: new Date(y, m, d-3, 16, 0),
-          end: new Date(y, m, d-3, 19, 0),
-					allDay: false
-				},
-				{
-					id: 999,
-					title: 'Repeating Event2',
-					start: new Date(y, m, d+4, 16, 0),
-					allDay: false
-				},
-				{
-					title: 'Meeting',
-					start: new Date(y, m, d, 10, 30),
-					allDay: false
-				},
-				{
-					title: 'Lunch',
-					start: new Date(y, m, d, 12, 0),
-					end: new Date(y, m, d, 14, 0),
-					allDay: false
-				},
-				{
-					title: 'Birthday Party',
-					start: new Date(y, m, d+1, 19, 0),
-					end: new Date(y, m, d+1, 22, 30),
-					allDay: false
-				},
-				{
-					title: 'Click for Google',
-					start: new Date(y, m, 28),
-					end: new Date(y, m, 29),
-					url: 'http://google.com/'
-				},
-        {
-          title: 'term project',
-          start: new Date(y, m+1, 7, 19, 0),
-          allDay: false
-        }
+
 			]
 		});
 

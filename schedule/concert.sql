@@ -17,5 +17,8 @@ create table concert (
   file_copied_2 char(30),
   file_copied_3 char(30),
   file_copied_4 char(30),
+  s_date Date not null,
+  e_date Date not null,
+  opt int not null,
   primary key(num)
 );

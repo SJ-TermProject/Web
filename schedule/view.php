@@ -41,6 +41,9 @@ $item_subject = str_replace(" ","&nbsp;",$row['subject']);
 $item_content = $row['content'];
 $is_html = $row['is_html'];
 
+$date_s = $row['s_date'];
+$date_e = $row['e_date'];
+
 if($is_html!="y"){
   $item_content=str_replace(" ","&nbsp;",$item_content);
   $item_content=str_replace("\n","<br>",$item_content);
@@ -124,6 +127,7 @@ mysql_query($sql, $connect);
              </div>
 
              <div id="view_content">
+               <div id="view_date"> 시작 : <?=$date_s?> 끝 : <?=$date_e?></div>
                <?
                for($i=0;$i<3;$i++){
                  if($image_copied[$i]){

@@ -4,6 +4,7 @@ extract($_POST);
    extract($_GET);
    extract($_SESSION);
 
+
 include "../lib/dbconn.php";
 
 if(isset($mode)){
@@ -23,6 +24,11 @@ if($mode=="modify")
   $copied_file_0 = $row['file_copied_0'];
   $copied_file_1 = $row['file_copied_1'];
   $copied_file_2 = $row['file_copied_2'];
+
+  $date_s = $row['s_date'];
+  $date_e = $row['e_date'];
+
+  $d_option = $row['opt'];
 }
 
 }
@@ -32,6 +38,9 @@ if($mode=="modify")
  <html>
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+     <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
      <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
      <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
@@ -46,7 +55,7 @@ if($mode=="modify")
          margin-top: 5px;
          margin-left: 10px;
          height: 33px;
-         width: 300px;
+         width: 150px;
        }
        #write_form #write_row2 {
          height: 34px;
@@ -114,6 +123,7 @@ if($mode=="modify")
        }
        document.board_form.submit();
      }
+
      </script>
    </head>
    <body>
@@ -174,6 +184,15 @@ if($mode=="modify")
                  }
 
                      ?>
+
+                     <div class="col4">
+                       <select name="opt" style="margin-right: 10px;">
+                       <option value="1">개인</option>
+                       <option value="2">동아리</option>
+                       <option value="3">학과</option>
+                       <option value="4">학교</option>
+                     </select>
+                     시작 : <input type="date" name="s_date"> 끝 : <input type="date" name="e_date"></div>
                    </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>

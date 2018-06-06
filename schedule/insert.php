@@ -17,6 +17,9 @@
   if(!isset($mode)) $mode="";
   $content = $_POST['content'];
 
+  $date_s=$_POST['s_date'];
+  $date_e=$_POST['e_date'];
+  $opt=$_POST['opt'];
 
 
 ?>
@@ -44,6 +47,8 @@
 
     //다중 파일 업로드
     $files=$_FILES['upfile'];
+
+
     $count=count($files["name"]);
     $upload_dir="./data/";
     var_dump($_FILES);
@@ -148,7 +153,7 @@
           }
         }
       }
-      $sql="update $table set subject='$subject', content='$content' where num=$num";
+      $sql="update $table set subject='$subject', content='$content', s_date='$date_s', e_date='$date_e' where num=$num";
       mysql_query($sql, $connect);
     }
     else {
@@ -161,12 +166,11 @@
       }
 
       $sql="insert into $table (id, name, subject, content, regist_day, hit, is_html, ";
-      $sql.="file_name_0, file_name_1, file_name_2, file_copied_0, file_copied_1, file_copied_2)";
+      $sql.="file_name_0, file_name_1, file_name_2, file_copied_0, file_copied_1, file_copied_2, s_date, e_date, opt)";
       $sql.="values('$userid','$username','$subject','$content','$regist_day', 0, '$is_html', ";
-      $sql.="'$upfile_name[0]', '$upfile_name[1]','$upfile_name[2]','$copied_file_name[0]','$copied_file_name[1]','$copied_file_name[2]')";
+      $sql.="'$upfile_name[0]', '$upfile_name[1]','$upfile_name[2]','$copied_file_name[0]','$copied_file_name[1]','$copied_file_name[2]', '$date_s', '$date_e', '$opt')";
       mysql_query($sql, $connect);
     }
-
     mysql_close();
     echo("
     <script>
