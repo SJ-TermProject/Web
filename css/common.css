@@ -5,7 +5,7 @@ body {
 	background-repeat:repeat-x;
 	font-size:12px;
 	font-weight:normal;
-	color:#333333;
+	/*color:#333333;*/
 }
 
 
@@ -24,6 +24,10 @@ a:hover, a:visited, a:link, a:active {
 	color:#555555;
 }
 
+.menu a:hover {
+	color: #e0e0e0;
+}
+
 ul, li {
 	margin:0;
 	padding:0;
@@ -38,10 +42,11 @@ ul, li {
 
 
 #wrap {
-	width:1000px;
+	width:80%;
+	margin-top: 2%;
 	margin-right: auto;
 	margin-left: auto;
-	min-height:600px;
+	/*min-height:600px;*/
 
 /*	border:solid 1px #00ff00; */
 }
@@ -50,6 +55,7 @@ ul, li {
 	height:62px;
 /*	border:solid 1px #cccccc;  */
 	margin-top:16px;
+	margin-bottom: 2%;
 }
 
 #logo {
@@ -60,8 +66,8 @@ ul, li {
 
 #moto {
 	float:left;
-	margin-left:100px;
-	margin-top:5px;
+	margin-left:30px;
+	margin-top:15px;
 }
 
 #top_login {
@@ -73,15 +79,18 @@ ul, li {
 	margin-top:5px;
 }
 
-.menus {
+/*.menus {
 	float:left;
-}
+}*/
+
 
 #content {
 	overflow:hidden;
-	margin-top:56px;
-	width:998px;
+	margin-top:20px;
+	/*width:998px;*/
 	min-height: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #content #main_img {
@@ -95,6 +104,7 @@ ul, li {
 	float:left;
 	border-right:solid 1px #dddddd;
 }
+
 
 #left_menu {
 	width:92%;

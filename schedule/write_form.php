@@ -177,11 +177,11 @@ if($mode=="modify")
                    </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>
-                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px;"></div>
+                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px; width:643px;"></div>
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="75"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="78"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
                  <div class="col2"><input type="file" name="upfile[]"></div>

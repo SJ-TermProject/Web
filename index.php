@@ -92,7 +92,7 @@
     <div id="wrap">
     <!--상단 헤더-->
     <div id="header">
-    <div id="logo"><a href="index.php"><i style="color: navy;" class="far fa-calendar-alt fa-4x"></i></a></div>
+    <div id="logo"><a href="index.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color: navy;" class="far fa-calendar-alt fa-4x"></i></a></div>
     <div id="moto"><img src="./img/moto.gif"></div>
     <div id="top_login">
       <?
@@ -114,8 +114,8 @@
   </div>
 
     <!--네비게이션 바-->
-    <div class="menu">
-      <ul class="nav nav-pills nav-fill" style="background-color: navy; color:#eaeaea;">
+    <div class="menu" style="background-color: navy;">
+      <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
           <a class="nav-link" href="./schedule/list.php">상세일정</a>
         </li>
@@ -158,7 +158,7 @@
       </table>
     </div>
     <?php
-    include './footer.php';
+      include './footer.php';
 
      ?>
 

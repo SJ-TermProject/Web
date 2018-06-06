@@ -125,7 +125,7 @@ if(isset($mode)){
        </div>
 
        <div id="content">
-         <div id="col2">
+         <div id="col2" >
            <div id="title">
              <h5>상세일정</h5>
            </div>
