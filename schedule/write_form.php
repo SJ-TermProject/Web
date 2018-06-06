@@ -196,11 +196,11 @@ if($mode=="modify")
                    </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>
-                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px;"></div>
+                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px; width:643px;"></div>
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="75"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="78"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
                  <div class="col2"><input type="file" name="upfile[]"></div>
@@ -256,9 +256,8 @@ if($mode=="modify")
                  <div class="clear"></div>
                   </div>
                   <div id="write_button"><a href="#">
-                  <img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
-                  <!-- <a href="list.php?table=<?//=$table?>&page=<?//=$page?>"> <img src="../img/list.png"> -->
-                  <a href="list.php"> <img src="../img/list.png">
+                      <a class="btn btn-outline-dark" href="#" onclick="check_input()">완료</a>
+                       <a class="btn btn-outline-secondary" href="list.php" role="button">목록</a></div>
 
 
                   </a>
@@ -267,6 +266,11 @@ if($mode=="modify")
 
                </div>
              </div>
-           </div>
+             <br>
+             <br>
+             <?php
+               include '../footer.php';
+
+              ?>
    </body>
  </html>

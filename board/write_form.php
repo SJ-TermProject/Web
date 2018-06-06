@@ -236,8 +236,9 @@ if($mode=="modify")
                  <div class="clear"></div>
                   </div>
                   <div id="write_button"><a href="#">
-                  <img src="../img/ok.png" onclick="check_input()"></a>&nbsp;
-                  <a href="list.php"> <img src="../img/list.png">
+                    <a class="btn btn-outline-dark" href="#" onclick="check_input()" role="button">완료</a>
+                     <a class="btn btn-outline-secondary" href="list.php" role="button">목록</a></div>
+
                   </a>
                 </div>
                  </form>
@@ -245,5 +246,8 @@ if($mode=="modify")
                </div>
              </div>
            </div>
+           <?
+           include '../footer.php';
+           ?>
    </body>
  </html>
