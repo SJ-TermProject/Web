@@ -66,6 +66,7 @@ extract($_POST);
        #page_button {
          height: 50px;
        }
+
      </style>
    </head>
    <?
@@ -156,7 +157,7 @@ extract($_POST);
              </tr>
            </thead>
 
-           <div cid="list_content">
+
              <?
              for($i=$start; $i < $start+$scale && $i < $total_record; $i++){
                //mysql_data_seek($result, $i);
@@ -211,7 +212,7 @@ extract($_POST);
 
                   </div>
                 </div>
-              </div>
+              
               <div class="clear"></div>
 
 
@@ -222,7 +223,7 @@ extract($_POST);
      </div>
      <br>
      <br>
-     
+
      <?
      include '../footer.php';
      ?>

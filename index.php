@@ -2,6 +2,9 @@
 session_start();
   extract($_POST);
      extract($_GET);
+     $userid = $_SESSION['userid'];
+     $username = $_SESSION['username'];
+     $userlevel = $_SESSION['userlevel'];
 
 //  error_reporting(E_ALL & ~E_NOTICE );
 
@@ -65,7 +68,7 @@ session_start();
     <meta charset="utf-8">
     <title>PHP calendar</title>
 
-    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css?ver=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -73,11 +76,15 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
     <style>
-    body {
-
-    }
+      body {
+        background-color: #efefef;
+      }
       .container {
-        margin-top: 80px;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
       }
       th {
         height:30px;
@@ -130,7 +137,7 @@ session_start();
   </div>
 
     <!--네비게이션 바-->
-    <div class="menu" style="background-color: navy;">
+    <div class="menu" style="background-color: navy; padding: 0px 150px 0px 150px;">
       <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
           <a class="nav-link" href="./schedule/list.php">상세일정</a>
@@ -152,21 +159,18 @@ session_start();
 
 
 <!--배너 -->
-
-
-
     <div class="container">
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="첫번째 슬라이드">
+          <img style="height:600px; width: 100%;" class="w-100" src="./banner1.jpg"alt="첫번째 슬라이드">
         </div>
         <div class="carousel-item">
-          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="두번째 슬라이드">
+          <img style="height:600px; width: 100%;" class="w-100" src="./banner3.png"alt="두번째 슬라이드">
         </div>
         <div class="carousel-item">
-          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="세번째 슬라이드">
+          <img style="height:600px; width: 100%;" class="w-100" src="./banner2.jpg" alt="세번째 슬라이드">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -178,6 +182,8 @@ session_start();
         <span class="sr-only">다음</span>
       </a>
       </div>
+
+      <br>
 
 
       <? include './calendar.php'; ?><div id='calendar'></div>

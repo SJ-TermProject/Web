@@ -1,8 +1,8 @@
 #content #col2 {
-	width:807px;
-	min-height:558px;
-	float:left;
-	margin-left:15px;
+	margin : 0 auto;
+	width : 807px;
+	min-height : 558px;
+
 /*	border:solid 1px #cccccc; */
 }
 
@@ -62,7 +62,7 @@
 
 #list_top_title {
 	height:20px;
-	padding:7px;  
+	padding:7px;
 	border-top:solid 2px #aaaaaa;
 	background-color:#eeeeee;
 	margin-bottom:3px;
@@ -93,13 +93,13 @@
 }
 
 #list_content {
-	height:380px;
+	height:0px;
 }
 
 #list_item {
 	height:18px;
 	margin-top:2px;
-	padding:6px;  
+	padding:6px;
 	border-bottom:solid 1px #eeeeee;
 }
 
@@ -156,7 +156,7 @@
 	width:99%;
 	height:20px;
 	text-align:center;
-	padding-top:7px;  
+	padding-top:7px;
 	border-top:solid 2px #aaaaaa;
 	background-color:#eeeeee;
 }
@@ -166,25 +166,25 @@
 }
 
 #write_form #write_row1 {
-    width:99%; 
-	height:25px; 
-	margin:2px 0 2px 0; 
+    width:99%;
+	height:25px;
+	margin:2px 0 2px 0;
 }
 
 #write_form #write_row2 {
-    width:99%; 
-	height:25px; 
-	margin:2px 0 2px 0; 
+    width:99%;
+	height:25px;
+	margin:2px 0 2px 0;
 }
 
 #write_form #write_row3 {
-    width:99%; 
-	height:251px; 
-	margin:2px 0 2px 0; 
+    width:99%;
+	height:251px;
+	margin:2px 0 2px 0;
 }
 
 .write_line {
-    width:99%; 
+    width:99%;
 	border-bottom:solid 1px #cccccc;
 }
 
@@ -243,7 +243,7 @@
 
 #view_title {
 	height:18px;
-	padding:10px 8px 8px 8px;  
+	padding:10px 8px 8px 8px;
 	border-top:solid 2px #aaaaaa;
 	background-color:#eeeeee;
 	margin-bottom:5px;

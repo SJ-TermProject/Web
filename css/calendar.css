@@ -19,18 +19,20 @@
 .fc {
 	direction: ltr;
 	text-align: left;
-	background-color: #c7c8ff;
+	background-color: lightgray;
 	padding: 20px;
 	}
 
 .fc table {
 	border-collapse: collapse;
 	border-spacing: 0;
+
 	}
 
 .fc td, .fc th {
 	padding: 0;
 	vertical-align: top;
+
 	}
 
 
@@ -81,6 +83,13 @@ table.fc-header {
 
 .fc-rtl .fc-header-title {
 	direction: rtl;
+	}
+
+	.fc-view.fc-view-month.fc-grid tbody,
+	.fc-view.fc-view-month.fc-grid td,
+	 .fc-view.fc-view-month.fc-grid thead,
+	 .fc-view.fc-view-month.fc-grid th {
+		border: 2px solid gray;
 	}
 
 
@@ -215,7 +224,7 @@ table.fc-header {
 	}
 
 .fc-content .fc-state-highlight { /* today */
-	background: #786dfb70;
+	background: gray;
 	}
 
 .fc-content .fc-not-today {
@@ -242,8 +251,8 @@ table.fc-header {
 .fc-agenda .fc-event-time,
 .fc-event a {
 	border-style: solid;
-	border-color: #36c;     /* default BORDER color (probably the same as background-color) */
-	background-color: #36c; /* default BACKGROUND color */
+	border-color: black;     /* default BORDER color (probably the same as background-color) */
+	background-color: black; /* default BACKGROUND color */
 	color: #fff;            /* default TEXT color */
 	}
 

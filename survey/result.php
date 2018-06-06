@@ -1,7 +1,7 @@
 <?
 extract($_POST);
    extract($_GET);
-   
+
   include "../lib/dbconn.php";
 
   $sql="select * from survey";
@@ -167,7 +167,7 @@ extract($_POST);
         <td bgcolor='#ffffff'></td>
       </tr>
       <tr>
-        <td height1 colspan=5 bgcolor=#ffffff></td>
+        <td height=1 colspan=5 bgcolor=#ffffff></td>
       </tr>
     </table>
   </body>
