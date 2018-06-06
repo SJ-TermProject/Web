@@ -165,7 +165,7 @@ mysql_query($sql, $connect);
                while($row_ripple=mysql_fetch_array($ripple_result)) {
                  $ripple_num=$row_ripple['num'];
                  $ripple_id=$row_ripple['id'];
-                 $ripple_name="익명".$item_num;
+                 $ripple_name="익명".$ripple_num;
                  $ripple_content=str_replace("\n", "<br>", $row_ripple['content']);
                  $ripple_content=str_replace(" ", "&nbsp;", $ripple_content);
                  $ripple_date=$row_ripple['regist_day'];

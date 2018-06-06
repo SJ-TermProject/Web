@@ -7,6 +7,16 @@ $table="concert";
 
 include "../lib/dbconn.php";
 
+if(!$userid) {
+  echo("
+    <script>
+      window.alert('로그인 후 이용하세요.')
+       location.replace('../login/login_form.php');
+    </script>
+  ");
+  exit;
+}
+
 $sql="select * from $table where num=$num";
 
 $result=mysql_query($sql, $connect);
@@ -30,6 +40,9 @@ $item_date = $row['regist_day'];
 $item_subject = str_replace(" ","&nbsp;",$row['subject']);
 $item_content = $row['content'];
 $is_html = $row['is_html'];
+
+$date_s = $row['s_date'];
+$date_e = $row['e_date'];
 
 if($is_html!="y"){
   $item_content=str_replace(" ","&nbsp;",$item_content);
@@ -114,6 +127,7 @@ mysql_query($sql, $connect);
              </div>
 
              <div id="view_content">
+               <div id="view_date"> 시작 : <?=$date_s?> 끝 : <?=$date_e?></div>
                <?
                for($i=0;$i<3;$i++){
                  if($image_copied[$i]){

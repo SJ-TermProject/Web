@@ -5,6 +5,7 @@
      extract($_SESSION);
 //  error_reporting(E_ALL & ~E_NOTICE );
 
+
   date_default_timezone_set('Asia/Tokyo');
 
   if(isset($_GET['ym'])) {
@@ -58,14 +59,19 @@
   }
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
     <meta charset="utf-8">
     <title>PHP calendar</title>
+
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <? include './calendar.php'; ?>
     <style>
       .container {
         margin-top: 80px;
@@ -86,6 +92,13 @@
       th:nth-of-type(1),td:nth-of-type(1){
         color: red;
       }
+      tbody tr {
+        height: 104px;
+      }
+     tbody td {
+       margin-bottom: 0px;
+       height: 104px;
+     }
     </style>
   </head>
   <body>
@@ -141,10 +154,31 @@
 
     <div class="container">
 
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="첫번째 슬라이드">
+        </div>
+        <div class="carousel-item">
+          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="두번째 슬라이드">
+        </div>
+        <div class="carousel-item">
+          <img style="height:200px;" class="img-fluid w-100" src="./nopage.gif" alt="세번째 슬라이드">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">이전</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">다음</span>
+      </a>
+      </div>
 
+      <div id='calendar'></div>
+    <!--  <h3><a href='?ym=<?php //echo $prev; ?>'> &lt; </a><?php //echo $html_title; ?><a href="?ym=<?php //echo $next; ?>"> &gt; </a></h3>
 
-      <!--달력 일정-->
-      <h3><a href='?ym=<?php echo $prev; ?>'> &lt; </a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>"> &gt; </a></h3>
       <br>
       <table class="table table-borderd">
         <tr>
@@ -157,9 +191,9 @@
           <th>S</th>
         </tr>
         <?php
-          foreach($weeks as $week) {
-            echo $week;
-          }
+          //foreach($weeks as $week) {
+          //  echo $week;
+          //}
 
         ?>
 
@@ -169,13 +203,13 @@
 
 
 
+-->
   </div>
+      
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <?php
       include './footer.php';
-
-     ?>
   </body>
 </html>
