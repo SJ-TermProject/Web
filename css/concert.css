@@ -1,11 +1,9 @@
-
 #content #col2 {
-	width:807px;
-	min-height:558px;
-	float:left;
-	margin-left:15px;
-/*	border:solid 1px #cccccc; */
+	width : 807px;
+	min-height : 558px;
+	/*	border:solid 1px #cccccc; */
 }
+
 
 #content #col2 #title{
 	margin-top:30px;

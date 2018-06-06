@@ -11,7 +11,7 @@ extract($_POST);
  <html>
    <head>
      <meta charset="utf-8">
-     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/common.css?ver=3" media="all">
      <link rel="stylesheet" type="text/css" href="../css/concert.css" media="all">
      <title></title>
      <style>
