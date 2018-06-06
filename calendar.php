@@ -87,5 +87,5 @@
 		}
 
 </style>
-
+</head>
 </html>
