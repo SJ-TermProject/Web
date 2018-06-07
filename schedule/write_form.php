@@ -55,7 +55,7 @@ if($mode=="modify")
          margin-top: 5px;
          margin-left: 10px;
          height: 33px;
-         width: 560px;
+         width: 540px;
        }
        #write_form #write_row2 {
          height: 34px;
@@ -171,10 +171,10 @@ if($mode=="modify")
                    <div class="write_line"></div>
                    <div id="write_row1"><div class="col1"> 이름 </div>
                    <div class="col2"><?=$username?></div>
-    
+
 
                      <div class="col4">
-                       <select name="opt" style="margin-right: 10px;">
+                       <select name="opt" style="margin-right: 0px;">
                        <option value="1">개인</option>
                        <option value="2">동아리</option>
                        <option value="3">학과</option>
@@ -184,11 +184,11 @@ if($mode=="modify")
                    </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>
-                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px; width:1050px;"></div>
+                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px; width:1052px;"></div>
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="138"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="129"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div></div>
                  <div class="write_line"></div>
                  <div id="write_row4"><div class="col1"> 이미지파일1 </div>
                  <div class="col2"><input type="file" name="upfile[]" style="width: 1055px;"></div>

@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
-<link href="../css/member.css?ver=1" rel="stylesheet" type="text/css" media="all">
+<link href="../css/member.css?ver=2" rel="stylesheet" type="text/css" media="all">
 <style>
 
 td{

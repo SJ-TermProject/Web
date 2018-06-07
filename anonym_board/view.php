@@ -191,7 +191,7 @@ mysql_query($sql, $connect);
                <form name="ripple_form" method="post" action="insert_ripple.php?table=<?=$table?>&num=<?=$item_num?>">
                  <div id="ripple_box">
                    <div id="ripple_box1"><img src="../img/title_comment.gif"></div>
-                   <div id="ripple_box2"><textarea rows="3" cols="120" name="ripple_content"></textarea></div>
+                   <div id="ripple_box2"><textarea rows="3" cols="113" name="ripple_content"></textarea></div>
                    <div id="ripple_box3"><a href="#"><img src="../img/ok_ripple.gif" onclick="check_input()"></a></div>
                  </div>
                </form>

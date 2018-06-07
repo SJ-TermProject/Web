@@ -11,8 +11,8 @@ extract($_POST);
  <html>
    <head>
      <meta charset="utf-8">
-     <link rel="stylesheet" type="text/css" href="../css/common.css?" media="all">
-     <link rel="stylesheet" type="text/css" href="../css/concert.css?" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+     <link rel="stylesheet" type="text/css" href="../css/concert.css?ver=1" media="all">
      <title></title>
      <style>
      body {
@@ -212,7 +212,7 @@ if(isset($mode)){
                   <div id="button">
                     <a href="list.php?table=<?=$table?>&page=<?=$page?>" class="btn btn-outline-secondary">&nbsp;&nbsp;목록&nbsp;&nbsp;</a>
                     <?
-                    if($userlevel==0 || $userlevel==1){
+                    if($userid && ($userlevel==0 || $userlevel==1)){
                       ?>
                       <a href="write_form.php?table=<?=$table?>" class="btn btn-outline-dark">&nbsp;&nbsp;글쓰기&nbsp;&nbsp;</a>
                       <?

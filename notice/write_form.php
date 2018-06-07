@@ -159,11 +159,11 @@
                </div>
                    <div class="write_line"></div>
                    <div id="write_row2"><div class="col1">제목</div>
-                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px; width:1050px;"></div>
+                   <div class="col2"><input type="text" name="subject" value="<?if(isset($mode)){if($mode=="modify"){echo $item_subject;}}?>" style="height:30px; width:1052px;"></div>
                  </div>
                  <div class="write_line"></div>
                  <div id="write_row3"><div class="col1"><br><br><br><br><br><br><br>내용</div>
-                 <div class="col2"><textarea name="content" rows="15" cols="138"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div>
+                 <div class="col2"><textarea name="content" rows="15" cols="129"><?if(isset($mode)){if($mode=="modify"){echo $item_content;}}?></textarea></div>
                  </div>
                  <div class="write_line"></div>
 

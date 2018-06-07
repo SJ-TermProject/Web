@@ -1,5 +1,6 @@
 #content {
 	width: 1200px;
+	min-height: 650px;
 }
 
 #content #col2 {

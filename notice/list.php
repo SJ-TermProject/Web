@@ -207,7 +207,7 @@ extract($_POST);
                   </div>
                   <div id="button">
                     <a href="list.php?page=<?=$page?>" class="btn btn-outline-secondary">&nbsp;&nbsp;목록&nbsp;&nbsp;</a><?
-                    if($userlevel==0){
+                    if($userid && $userlevel==0){
                       ?>
                       <a href="write_form.php" class="btn btn-outline-dark">&nbsp;&nbsp;글쓰기&nbsp;&nbsp;</a>
                       <?

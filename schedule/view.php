@@ -146,7 +146,7 @@ mysql_query($sql, $connect);
                 <a class="btn btn-outline-secondary" href="list.php" role="button">목록</a>&nbsp;
                 <?
                 if(isset($userid)){
-                if($userid==$item_id || $userid=="admin" || $userlevel==1){
+                if($userid==$item_id &&( $userlevel == 0 || $userlevel==1)){
                   ?>
                   <a class="btn btn-outline-secondary" href="write_form.php?table=<?=$table?>&mode=modify&num=<?=$num?>&page=<?=$page?>" role="button">수정</a>&nbsp;
                   <a class="btn btn-outline-secondary" href="javascript:del('delete.php?table=<?=$table?>&num=<?=$num?>')" role="button">삭제</a>&nbsp;
@@ -157,7 +157,7 @@ mysql_query($sql, $connect);
                 ?>
                 <?php
 
-                if(isset($userid)){
+                if(isset($userid)&&($userlevel == 1 || $userlevel == 0)  ){
                   ?>
                   <a class="btn btn-outline-dark" href="write_form.php?table=<?=$table?>" role="button">글쓰기</a>&nbsp;
                   <?
